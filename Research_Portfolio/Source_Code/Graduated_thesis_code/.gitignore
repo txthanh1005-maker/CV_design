@@ -1,0 +1,22 @@
+# Ignore all files in the root directory by default
+/*
+
+# Un-ignore all directories (we will re-ignore the ones we don't want below)
+!/*/
+
+# Ignore the virtual environment and other system/cache folders
+my_env_P2PQV/
+__pycache__/
+.vscode/
+.dist/
+.antigravitycli/
+.git/
+Result_data/
+Emergency_Sharing_Plan/1_Raw_Literature/
+/*# Un-ignore the 3 specific files you requested
+!Function.py
+!build_model.py
+!main.py
+
+# Un-ignore this .gitignore file so it can be pushed
+!.gitignore
