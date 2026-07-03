@@ -35,4 +35,4 @@ Official documentation and proofs of honors.
 * **Machine Learning:** XGBoost, Time-Series Forecasting
 * **Languages & Tools:** Python (Pyomo), MATLAB/Simulink, LTspice, LaTeX, Multi-Agent AI
 
-*Contact: txthanh1005@gmail.com | [LinkedIn Profile]*
+*Contact: txthanh1005@gmail.com*
