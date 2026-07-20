@@ -1,0 +1,172 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Removed mathptmx to use LaTeX standard Computer Modern font like Jiaqi Chen
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Spacing and formatting
+% Removed setstretch to use default compact line spacing
+\usepackage[none]{hyphenat}
+\sloppy
+
+% Color setup for links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=blue,
+    citecolor=black,
+}
+
+% Section formatting to match Jiaqi Chen (Small Caps)
+\titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{2.5ex}{0.5ex}
+
+% Custom commands for entries
+\newcommand{\cventry}[4]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \noindent\textit{#3} \hfill \textit{#4}
+}
+
+\newcommand{\cvproject}[3]{
+  \noindent\textbf{#1} $|$ \textit{#2} \hfill #3
+}
+
+\newcommand{\cvpub}[1]{
+  \noindent #1
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+\begin{document}
+
+% HEADER
+\begin{center}
+    {\LARGE \textbf{THANH TRINH-XUAN}} \\[1ex]
+    Viet Nam $|$ +84 867 663 236 $|$ \href{mailto:txthanh1005@gmail.com}{txthanh1005@gmail.com} $|$ \href{https://github.com/txthanh1005-maker/CV_design/tree/main/Research_Portfolio}{Thanh Trinh-Xuan Github}
+\end{center}
+
+\vspace{1ex}
+
+% EDUCATION
+\section*{Education}
+
+\cventry{Hanoi University of Science and Technology (HUST)}{Hanoi, Vietnam}{Bachelor of Engineering in Electrical Engineering}{Aug. 2026 (Expected)}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item \textbf{GPA:} 3.2/4.0
+    \item \textbf{Research interests:} mathematical programming and distributed algorithms in power systems, peer-to-peer energy markets in multi-microgrids, optimization and operation control in resilience-oriented interconnected smart grids
+    \item \textbf{Affiliation:} Member of 100 Renewable Energy Laboratory.
+    \item \textbf{Bachelor's Thesis:} Resilience-Oriented Peer-to-Peer Energy Trading in Multi-Microgrids via Network-Constrained Distributed Predictive Control
+    \item \textbf{Relevant Coursework:} Power System Analysis, Power System Automation, Power System Protection and Control, Digital System Design, Programming Techniques.
+\end{itemize}
+
+\vspace{1ex}
+
+\cventry{Lam Son High School for the Gifted Students}{Thanh Hoa, Vietnam}{High School Diploma, Mathematics Specialization}{Jul. 2022}
+
+\vspace{1ex}
+
+% RESEARCH AND WORK EXPERIENCE
+\section*{Research Experience}
+\noindent {Undergraduate Researcher} \hfill \textit{Sep. 2024 -- Present}
+% \cvproject{Undergraduate Researcher}{Sep. 2024 -- Present}
+
+\noindent\textit{Power Grid and Renewable Energy Laboratory, Hanoi, Vietnam}\\
+\noindent\textit{Supervisor: Assoc. Prof. Nguyen Duc Tuyen}
+
+\vspace{1ex}
+\noindent \parbox[t]{0.82\linewidth}{\textbf{Bachelor's Thesis}}%
+\hfill\parbox[t]{0.16\linewidth}{\raggedleft\textit{2025 -- 2026}}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Modeled P-Q-V dynamics using \textbf{Second-Order Cone Programming (SOCP)} and integrated load shedding penalty functions to mitigate relaxation inexactness (fictitious currents), ensuring exact grid constraint enforcement.
+    \item Implemented \textbf{Analytical Target Cascading (ATC)} to maintain decentralized coordination when extreme faults cause network fragmentation and render centralized control unviable.
+    \item Designed \textbf{Model Predictive Control (MPC)} frameworks for dynamic rescheduling to mitigate immediate power imbalances during blackouts that invalidate static day-ahead dispatch.
+\end{itemize}
+
+\vspace{1ex}
+\noindent\textbf{Project: Distributed Energy Management Frameworks} \hfill \textit{2024 -- 2025}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Developed a 3-layer architecture linking \textbf{MILP} for discrete unit commitment, \textbf{ADMM} for decentralizing tie-lines without exposing private data, and \textbf{Nucleolus} for fair \textbf{Peer-to-Peer (P2P)} profit sharing.
+    \item Applied \textbf{Demand Side Management (DSM)} to optimized local microgrid load scheduling for mitigating peak-load stress and reducing operational costs during islanded mode.
+    \item Implemented an adaptive penalty tuning mechanism based on primal-dual residual balancing to resolve \textbf{ADMM} divergence caused by constrained P2P parameters, ensuring rapid convergence.
+\end{itemize}
+
+\vspace{1ex}
+\noindent\textbf{Lab Contribution \& Mentorship} \hfill \textit{2024 -- Present}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Architected custom Multi-Agent AI workflows to accelerate personal literature synthesis.
+    \item Mentored junior researchers in academic reading methodologies and algorithmic modeling, driving lab research productivity.
+\end{itemize}
+
+\vspace{1ex}
+
+% ACADEMIC PROJECTS
+\section*{Academic Projects}
+
+\noindent\textbf{Machine Learning for EV Load Forecasting} \hfill \textit{Mar. 2026 -- April 2026}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Engineered a Proxy-Lag Cascade Ensemble architecture utilizing dual XGBoost models (t+24h and t+1) to eliminate phase lag and accurately forecast peak EV load demand.
+\end{itemize}
+
+\vspace{1ex}
+\noindent\textbf{Industrial Power Supply \& Distribution Network Design} \hfill \textit{Oct. 2025 -- Dec. 2025}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Designed a high/low-voltage distribution network for a large-scale manufacturing plant, optimizing the techno-economic balance between CAPEX and OPEX without compromising system stability.
+    \item Sized transformers, optimized cable cross sections, and performed short circuit calculations to prevent thermal overloads and ensure reliability across all operating conditions.
+\end{itemize}
+
+\vspace{1ex}
+\noindent\textbf{Electronic \& Hardware Prototyping} \hfill \textit{2023 -- 2024}
+\begin{itemize}[leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item Designed and physically prototyped an AC current measurement circuit and a DC-DC Buck converter to ensure stable voltage regulation and high-precision monitoring for hardware testing.
+    \item Simulated layouts using LTspice, Proteus, and MATLAB/Simulink to validate circuit robustness prior to physical fabrication.
+\end{itemize}
+
+\vspace{1ex}
+
+% PUBLICATIONS
+\section*{Publications \& Presentations}
+
+\begin{enumerate}[label={[\arabic*]}, leftmargin=0.25in, itemsep=0pt, topsep=0pt]
+    \item \textbf{T. X. Thanh (1st Author)}, N. T. Anh, T. X. Hung, N. D. Tuyen, T. T. Son, G. Fujita, "A Decentralized MILP-ADMM Framework for P2P Energy Trading in Interconnected Microgrids," \textit{10th International Conference on Green Energy and Applications (ICGEA)}, Mar. 2026. \textbf{[Oral Presentation]}
+    \item L. A. Quan, \textbf{T. X. Thanh (2nd Author)}, N. T. Anh, P. T. Vinh, T. X. Hung, N. D. Tuyen, T. T. Son, "Microgrid Optimization with MILP-based Demand Side Management," \textit{Journal of Science and Technology (JST)}, vol. 36, Jun. 2026. \textbf{[Oral Presentation at Vietnam Student Forum]}
+\end{enumerate}
+
+\vspace{1ex}
+
+% SKILLS
+\section*{Skills}
+
+\begin{itemize}[leftmargin=0in, label={}, labelsep=0pt, itemsep=0pt, topsep=0pt]
+    \item \textbf{Optimization:} MILP, SOCP, Convex Relaxation
+    \item \textbf{Control \& Algorithms:} ADMM, ATC, MPC, Game Theory
+    \item \textbf{Programming:} Python (Pyomo), C, C++
+    \item \textbf{EE Simulation:} Simulink, LTspice, PVsyst, Proteus
+    \item \textbf{Tools \& AI:} Multi-Agent AI, LaTeX, Git
+    \item \textbf{Languages:} English (IELTS 6.0, Target 7.0)
+\end{itemize}
+
+\vspace{1ex}
+
+% HONORS
+\section*{Honors \& Awards}
+
+\noindent 2026 \quad Best Presentation Award, 10th Int. Conf. on Green Energy and Applications (ICGEA)
+
+\vspace{1ex}
+
+% REFERENCES
+\section*{References}
+
+\noindent \textbf{Assoc. Prof. Nguyen Duc Tuyen} \\
+\noindent Associate Professor and Head of PGRE Lab, Power Systems Department, HUST, Vietnam \\
+\noindent Adjunct Assoc. Prof, Shibaura Institute of Technology, Japan \\
+\noindent E-mail: \href{mailto:tuyen.nguyenduc@hust.edu.vn}{tuyen.nguyenduc@hust.edu.vn}
+
+\end{document}
