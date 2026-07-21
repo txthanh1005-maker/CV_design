@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  21 JUL 2026 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  21 JUL 2026 17:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**d:/#Thanh_application/CV_design/LOR_latex/LOR_Thanh
-(d:/#Thanh_application/CV_design/LOR_latex/LOR_Thanh.tex
+**d:/#Thanh_application/CV_design/LOR3_latex/LOR3_Thanh
+(d:/#Thanh_application/CV_design/LOR3_latex/LOR3_Thanh.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -206,6 +206,8 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 )
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
+) (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 ) (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2025/02/11 v3.2a Micro-typographical refinements (RS)
 \MT@toks=\toks23
@@ -236,32 +238,35 @@ Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 \langwohyphens=\language59
 LaTeX Info: Redefining \_ on input line 43.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 27.
- (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+Package hyperref Info: Option `colorlinks' set `true' on input line 29.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 33.
+ (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box55
-) (./LOR_Thanh.aux)
-\openout1 = `LOR_Thanh.aux'.
+) (./LOR3_Thanh.aux)
+\openout1 = `LOR3_Thanh.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -297,10 +302,10 @@ LaTeX Font Info:    ... okay on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 31.
-(./LOR_Thanh.out) (./LOR_Thanh.out)
+Package hyperref Info: Link coloring ON on input line 33.
+(./LOR3_Thanh.out) (./LOR3_Thanh.out)
 \@outlinefile=\write3
-\openout3 = `LOR_Thanh.out'.
+\openout3 = `LOR3_Thanh.out'.
 
  (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -327,62 +332,61 @@ Package grfext Info: Graphics extension search list:
  (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \microtypecontext on input line 31.
-Package microtype Info: Applying patch `item' on input line 31.
-Package microtype Info: Applying patch `toc' on input line 31.
-Package microtype Info: Applying patch `eqnum' on input line 31.
-Package microtype Info: Applying patch `footnote' on input line 31.
-Package microtype Info: Applying patch `verbatim' on input line 31.
-LaTeX Info: Redefining \microtypesetup on input line 31.
+LaTeX Info: Redefining \microtypecontext on input line 33.
+Package microtype Info: Applying patch `item' on input line 33.
+Package microtype Info: Applying patch `toc' on input line 33.
+Package microtype Info: Applying patch `eqnum' on input line 33.
+Package microtype Info: Applying patch `footnote' on input line 33.
+Package microtype Info: Applying patch `verbatim' on input line 33.
+LaTeX Info: Redefining \microtypesetup on input line 33.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 31.
+LaTeX Info: Redefining \showhyphens on input line 33.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
  (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-<logo-dai-hoc-bach-khoa-ha-noi.jpg, id=4, 489.32813pt x 190.46156pt>
-File: logo-dai-hoc-bach-khoa-ha-noi.jpg Graphic file (type jpg)
-<use logo-dai-hoc-bach-khoa-ha-noi.jpg>
-Package pdftex.def Info: logo-dai-hoc-bach-khoa-ha-noi.jpg  used on input line 34.
-(pdftex.def)             Requested size: 95.0266pt x 36.98866pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 64.
+(Font)              <7> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 64.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 64.
+(Font)              <5> on input line 37.
 
 
 [1
 
-{d:/Ungdung/Latex/installed/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./logo-dai-hoc-bach-khoa-ha-noi.jpg>] (./LOR_Thanh.aux)
+{d:/Ungdung/Latex/installed/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+
+[2] (./LOR3_Thanh.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `LOR_Thanh.out' has not changed.
+Package rerunfilecheck Info: File `LOR3_Thanh.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12234 strings out of 474006
- 195686 string characters out of 5729242
- 648496 words of memory out of 5000000
- 35265 multiletter control sequences out of 15000+600000
- 564533 words of font info for 70 fonts, out of 8000000 for 9000
+ 12334 strings out of 474006
+ 197139 string characters out of 5729242
+ 644282 words of memory out of 5000000
+ 35330 multiletter control sequences out of 15000+600000
+ 575322 words of font info for 89 fonts, out of 8000000 for 9000
  622 hyphenation exceptions out of 8191
- 75i,6n,79p,1257b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on LOR_Thanh.pdf (1 page, 108340 bytes).
+ 75i,5n,79p,1055b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on LOR3_Thanh.pdf (2 pages, 33194 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 10246 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 33 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 24577 words of extra memory for PDF output out of 24883 (max. 10000000)
 
