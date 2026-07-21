@@ -15,17 +15,17 @@
 ### Paragraph 1: Introduction & The Co-Author Relationship
 - **Main Idea:** I am Dr. Son, a Lecturer and PGRE Lab core member, recommending Xuan Thanh Trinh based on our direct collaboration.
 
-### Paragraph 2: Mathematical Abstraction & Autonomous Learning (Năng lực tự học Toán học bậc cao)
-- **Main Idea:** Thanh possesses an extreme level of intellectual autonomy and a formidable capacity for deep mathematical abstraction.
-- **Support Idea 1:** He consistently demonstrates the ability to independently master complex, non-linear optimization frameworks that extend far beyond the standard undergraduate curriculum.
-- **Support Idea 2:** Rather than passively absorbing abstract theories, he rigorously proves advanced mathematical concepts and adapts them to perfectly fit the specific constraints of complex research problems.
-- **Conclusion:** This exceptional ability to autonomously acquire and deploy advanced mathematical knowledge proves he requires zero hand-holding, making him fully prepared for the independent rigor of Ph.D. research.
+### Paragraph 2: Mathematical Abstraction & Independent Research (Tư duy Toán học & Nghiên cứu độc lập)
+- **Main Idea:** Thanh demonstrates a rare capacity for mathematical abstraction and independent research execution.
+- **Support Idea 1 (Math):** On a mathematical level, he rigorously proves advanced theoretical concepts and restructures non-linear algorithms to fit specific constraints.
+- **Support Idea 2 (Independent Research):** As an independent researcher, he navigates literature to master frameworks outside the standard curriculum, eliminating the need for direct supervision.
+- **Conclusion:** This dual capability proves he is fully equipped for the independent rigor of Ph.D. research.
 
 ### Paragraph 3: System-Level Thinking & Rigorous Validation (Tư duy hệ thống)
-- **Main Idea:** Furthermore, Thanh exhibits exceptional system-level thinking and a relentless drive for rigorous scientific validation.
-- **Support Idea 1:** He proactively subjects his algorithmic models to highly complex, multi-directional network topologies to deliberately expose and resolve hidden vulnerabilities.
-- **Support Idea 2:** He also independently designs advanced evaluation scenarios that capture the dynamic, multi-layered interactions between localized microgrids and the broader utility network.
-- **Conclusion:** His ability to conceptualize and validate algorithms under stringent, real-world architectural constraints significantly elevated the academic weight of our publication.
+- **Main Idea:** Thanh exhibits exceptional system-level thinking and rigorous validation methodology.
+- **Support Idea 1:** He proactively stress-tests algorithms across radial and meshed topologies (e.g., IEEE 123-bus), resolving ADMM non-convergence via dynamic penalty mechanisms.
+- **Support Idea 2:** He independently designs scenarios capturing the physical coupling between microgrids and the main grid under high renewable/storage penetration.
+- **Conclusion:** His ability to validate abstract models against realistic constraints provided the empirical foundation for our manuscript submitted to SEGAN.
 
 ### Paragraph 4: Academic Stamina & Grit (Độ trì tâm lý)
 - **Main Idea:** Beyond his technical vision, Thanh possesses an extraordinary degree of academic stamina—an unyielding grit that is essential for doctoral research.
