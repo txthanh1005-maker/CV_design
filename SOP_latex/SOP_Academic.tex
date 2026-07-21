@@ -1,0 +1,82 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=0.7in,right=0.7in,top=0.6in,bottom=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{microtype}
+\usepackage[none]{hyphenat}
+\sloppy
+\frenchspacing
+
+% Match font and spacing style from CV (no indent, standard Computer Modern, fixed gap)
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=blue,
+    citecolor=black,
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\noindent
+% \parbox[b]{0.5\textwidth}{}%
+% \parbox[b]{0.5\textwidth}{\raggedright Hanoi, July 20, 2026}
+
+\vspace{3ex}
+
+\begin{center}
+    \Large \textbf{STATEMENT OF PURPOSE}
+\end{center}
+
+\vspace{2ex}
+
+\noindent \textbf{Applicant:} Xuan Thanh Trinh\\
+\noindent \textbf{Program:} Ph.D. in Electrical and Computer Engineering\\
+\noindent \textbf{Proposed Advisor:} Assistant Professor Van-Hai Bui\\
+\noindent \textbf{Institution:} University of Michigan-Dearborn
+
+\vspace{3ex}
+
+\noindent \textbf{1. Introduction: From Computational Optimization to Physics-Informed AI}
+
+I am completing my Bachelor’s degree in Electrical Engineering at Hanoi University of Science and Technology (HUST), specializing in algorithmic control for modern power systems. At the Power Grid and Renewable Energy (PGRE) Laboratory, my research focuses on decentralized energy management and peer-to-peer (P2P) trading frameworks. I have developed distributed mathematical optimization models to enhance smart grid stability and economic efficiency—an analytical foundation that directly informed my graduation thesis on coordinating automated fault responses across networked microgrids.
+
+While rigorous mathematical optimization guarantees operational bounds, its computational overhead limits real-time scalability in complex grids. To overcome this, my future research centers on Physics-Informed AI (PI-AI) architectures: integrating data-driven learning algorithms with exact network physics and topological constraints to achieve scalable, real-time control. To advance this research agenda, I am applying to the Ph.D. program in Electrical and Computer Engineering at the University of Michigan-Dearborn. Under the supervision of Assistant Professor Van-Hai Bui, I aim to develop next-generation control frameworks for sustainable cyber-physical energy systems.
+
+\vspace{1ex}
+\noindent \textbf{2. Academic Journey: The Limits of Deterministic Solvers}
+
+My research trajectory reflects a systematic process of expanding both the physical realism and computational boundaries of energy management systems. In my initial research phase, presented at the JST Student Forum, I modeled 24-hour load shifting using Mixed-Integer Linear Programming (MILP) combined with Demand Response. This lumped-node approach achieved basic load leveling, but the formulation lacked spatial topology and multi-agent dynamics.
+
+Recognizing this limitation, my subsequent research at the ICGEA conference decomposed the IEEE 123-bus system into four autonomous microgrids. I formulated a peer-to-peer (P2P) active power trading framework utilizing the Alternating Direction Method of Multipliers (ADMM) and Game Theory to preserve data privacy and distribute operational profits. While this distributed architecture succeeded theoretically, I encountered practical convergence bottlenecks. More critically, neglecting underlying grid physics---specifically reactive power flows, voltage limits, and network losses---rendered the economic dispatch physically infeasible for real-world application.
+
+This realization drove the architecture of my graduation thesis. I discarded simplified DC approximations in favor of a Second-Order Cone Programming (SOCP) convex relaxation of the AC Optimal Power Flow (AC-OPF). To simulate realistic conditions, I implemented load shedding and renewable energy curtailment constraints, preventing the generation of fictitious currents inherent in cone relaxations. Replacing ADMM with Analytical Target Cascading (ATC), I coordinated fault responses across the network. I then wrapped the entire hierarchical model in a Model Predictive Control (MPC) framework to execute real-time responses under contingencies. However, implementing this system exposed a critical vulnerability in classical optimal control: MPC is constrained by its finite horizon visibility and online computational overhead. Brute-forcing mathematical optimization is elegant in theory but computationally brittle under high-frequency stochastic disturbances. True grid resilience requires predictive, learning-based AI control capable of microsecond decision-making.
+
+\vspace{1ex}
+\noindent \textbf{3. Current Research Interest: Physics-Informed AI for Smart Grids}
+
+My current research focuses on resolving the dichotomy between rigorous physical bounds and learning-based autonomy. The deployment of AI in power systems frequently fails because pure data-driven models do not respect Kirchhoff's laws or operational hardware limits. I intend to synthesize these paradigms by developing Physics-Informed AI for smart grids. Rather than utilizing deterministic solvers (SOCP, MPC) as the primary control mechanism, I propose deploying them as physical safety shields for Multi-Agent Reinforcement Learning (MARL) algorithms. Additionally, my background in formulating complex MILP problems positions me to construct the massive, mathematically exact ground-truth datasets required to supervise Large Language Model (LLM) surrogate schedulers, bridging the gap between exact optimization and rapid AI inference.
+
+\vspace{1ex}
+\noindent \textbf{4. Program Fit: Synergy with Prof. Van-Hai Bui}
+
+The research trajectory of Prof. Van-Hai Bui directly aligns with my technical background and Ph.D. objectives. Prof. Bui's recent publications on FairMarket-RL and XRL-LLM represent the frontier of integrating LLMs as real-time fairness critics and decision surrogates in multi-agent energy trading. My extensive experience in modeling exact physical constraints---such as voltage bounds in SOCP and sequential dispatch in MPC---serves as the precise prerequisite necessary to build the robust simulation environments and physical safety constraints required for these RL/LLM agents. I possess the coding and simulation stamina necessary to construct multi-microgrid environments, generate mathematically sound training datasets, and independently debug the critical interface where learning algorithms intersect with AC power flow physics. Joining Prof. Bui's group will allow me to integrate my optimization foundation with Safe RL and explainable AI (XAI), ensuring that predictive control agents remain physically resilient.
+
+\vspace{1ex}
+\noindent \textbf{5. Career Objective}
+
+Following the completion of my Ph.D., I intend to return to Vietnam to address the fundamental gap between classical power system operations and state-of-the-art AI. By repatriating advanced, AI-driven grid control technologies, my objective is to spearhead the technical modernization of Vietnam's national grid infrastructure, ensuring operational stability and resilience amid the accelerating integration of renewable energy sources. The doctoral program at the University of Michigan-Dearborn provides the rigorous environment necessary to execute this technical vision.
+
+\end{document}
