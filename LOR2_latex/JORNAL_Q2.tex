@@ -1,0 +1,1393 @@
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%% 
+%%
+%% $Id: elsarticle-template-num.tex 190 2020-11-23 11:12:32Z rishi $
+%%
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+\usepackage[dvipsnames]{xcolor}
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[utf8]{vietnam}
+\usepackage[vietnamese, english]{babel} % english là ngôn ngữ chính
+% \documentclass[12pt,a4paper,twocolumn]{scrartcl}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+\journal{Sustainable Energy, Grids and Networks}
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the note text command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%% \fntext[label3]{}
+
+\title{A comprehensive peer-to-peer energy trading framework for multiple microgrids using ...}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author[inst1]{Son Tran-Thanh}
+\author[inst1]{Thanh Trinh-Xuan}
+\author[inst1]{Anh Nguyen-Tuan}
+\author[inst1,inst2]{Tuyen Nguyen-Duc}
+\author[inst2]{Goro Fujita}
+
+
+\affiliation[inst1]{organization={Power Grid and Renewable Energy Laboratory, Department of Electrical Engineering,  Hanoi University of Science and Technology, Hanoi, Vietnam},%Department and Organization 
+            city={Hanoi},
+            country={Vietnam}}
+
+\affiliation[inst2]{organization={Department of Electrical Engineering, Shibaura Institute of Technology, Tokyo, 135-8548, Japan},%Department and Organization 
+            city={Tokyo},
+            postcode={135-8548}, 
+            country={Japan}}
+
+\cortext[cor1]{Corresponding author: tuyen.nguyenduc@hust.edu.vn}
+
+\begin{abstract}
+%% Text of abstract
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+ BESS Optimization \sep Second-order Cone Programming (SOCP) \sep Demand Response \sep Sensitivity Analysis \sep Distribution Network
+%% PACS codes here, in the form: \PACS code \sep code
+%\PACS 0000 \sep 1111
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+%\MSC 0000 \sep 1111
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section*{Nomenclature}
+
+\begin{table}[htbp]
+\centering
+\caption{Parameters for the SOCP model in Section 2.2}
+\label{tab:parameters_socp}
+\begin{tabularx}{\textwidth}{@{}l X l@{}}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Unit/Type} \\ \midrule
+$r_n, x_n$ & Resistance and reactance of branch $n$ & $\Omega$ \\
+$P_{n,t}^{Load}, Q_{n,t}^{Load}$ & Active and reactive load at node $n$ & kW, kVAR \\
+$P_{n,t}^{RE,peak}$ & Forecasted peak power of RE sources (PV/Wind) & kW \\
+$V_{min}, V_{max}$ & Minimum and maximum allowable voltage limits & p.u. \\
+$I_{max,n}$ & Thermal current limit of branch $n$ & p.u. \\
+$E_{n}^{cap}$ & Nominal energy capacity of BESS at node $n$ & MWh \\
+$\eta_n^{chg}, \eta_n^{dis}$ & Charging and discharging efficiency of BESS & \% \\
+$\pi_{buy,t}, \pi_{sell,t}$ & Grid purchasing and selling prices at time $t$ & Cents/kWh \\
+$I_n^{\{\cdot\}}$ & Binary indicators for asset placement (DG, BESS, RE) & $\{0, 1\}$ \\
+$\alpha_n, \beta_n, \gamma_n$ & Fuel cost coefficients of DG unit at node $n$ & Various \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Variables for the SOCP model in Section 2.2}
+\label{tab:variables_socp}
+\begin{tabularx}{\textwidth}{@{}l X l@{}}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Type} \\ \midrule
+$U_{n,t}$ & Squared voltage magnitude at node $n$ & Continuous \\
+$\ell_{n,t}$ & Squared current magnitude on branch $n$ & Continuous \\
+$P_{n,t}, Q_{n,t}$ & Active and reactive power flow on branch $n$ & Continuous \\
+$P_{n,t}^{DG}, Q_{n,t}^{DG}$ & Active and reactive power output of DG unit at node $n$ & Continuous \\
+$P_{n,t}^{chg}, P_{n,t}^{dis}$ & Active power charged/discharged by BESS & Continuous \\
+$SOC_{n,t}$ & State of charge of BESS at node $n$ and time $t$ & Continuous \\
+$P_{n,t}^{trade}$ & P2P trading power at trading node $n$ & Continuous \\
+$I_{n,t}^{DG}$ & Commitment status of DG unit (1: On, 0: Off) & Binary \\
+$u_{n,t}^{chg}, u_{n,t}^{dis}$ & Charging and discharging status of BESS & Binary \\
+$\lambda_{n,t}^{trade}$ & P2P trading price (LMP) derived from ADMM & Continuous \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\section{Introduction}
+The accelerating penetration of Distributed Energy Resources (DERs), including Photovoltaic (PV) systems, Wind Turbines (WTs), and Battery Energy Storage Systems (BESS) has fundamentally reshaped the operational landscape of modern distribution networks. Microgrids (MGs), serving as the primary aggregation unit for DERs, have emerged as a critical architectural component enabling local energy autonomy, improved grid resilience, and reduced dependence on centralised transmission infrastructure [1],[2]. In a multi-MG context, the spatial and temporal heterogeneity of renewable generation and load profiles creates natural opportunities for energy complementarity: a MG with surplus solar generation at noon can directly serve a neighbouring MG experiencing simultaneous peak demand. Realising this complementarity through peer-to-peer (P2P) energy trading has therefore attracted sustained research attention as a decentralised, market-based coordination paradigm capable of maximising renewable energy utilisation while reducing operational costs across the cluster [3].
+
+P2P energy trading enables prosumers and autonomous MG operators to exchange surplus energy directly, bypassing the main grid and the associated network tariffs, feed-in limitations, and curtailment losses. Beyond economic efficiency, P2P trading contributes to power system-level objectives including distribution congestion relief, reduced transmission losses, and enhanced coalition resilience during grid disturbances [4]. These motivations have catalysed a rich body of literature spanning pricing mechanisms, optimization algorithms, network constraint handling, and fairness guarantees—each of which is examined critically in the following subsections.
+
+Early P2P trading frameworks focused predominantly on mechanism design at the prosumer level within single-community settings. Zhang et al. [5] proposed a four-layer P2P architecture with auction-based pricing for a community MG, demonstrating that prosumers can simultaneously reduce grid imports and increase local renewable utilization. The supply-demand-ratio (SDR) mechanism, introduced by [6], established an endogenous pricing approach in which the clearing price dynamically adjusts to the ratio of local supply to demand, providing incentives for both buyers and sellers without requiring a centralized auctioneer. Bilateral contract approaches based on Nash bargaining theory have also been widely employed [7],[8]: these formulations guarantee individually rational and Pareto-efficient outcomes for pairwise trading, but their extension to multi-MG clusters with complex network topologies remains non-trivial.
+
+In multi-MG systems, the trading architecture must additionally address inter-MG coordination and the role of the distribution system operator (DSO). Yan et al. [9] developed a distribution network-constrained P2P transactive energy framework for multi-MGs in which the DSO reconfigures the distribution network based on trading outcomes through a mixed-integer second-order cone programming (MISOCP) AC optimal power flow model, requesting trading adjustments when network violations are detected. This two-level structure—trading at the lower level, network security at the upper level—was further extended by Wang et al. [10], who proposed a network-constrained P2P framework under uncertainty using a bi-level distributed algorithm combining parallel analytical target cascading with ADMM, bridging the gap between physical power flows and logical P2P transactions. Liu et al. [11] incorporated differentiated zoning pricing to simultaneously address technical grid operation constraints and economic trading incentives for multi-MG systems in active distribution networks.
+
+Despite these advances, the majority of multi-MG P2P frameworks share a common architectural limitation: they treat the interaction between trading and network constraints as a sequential or hierarchical process, rather than embedding physical network feasibility directly within the local MG optimization. This decoupling introduces a fundamental inconsistency, as the trading schedule is optimized without awareness of the internal network state that will ultimately determine its physical realizability.
+
+A critical and often underappreciated limitation in the P2P literature is the prevalent simplification of each MG as a single aggregated node. Under this assumption, only a global power balance constraint is enforced at the MG boundary, while the internal distribution network topology—with its individual feeders, nodal voltages, and line flow limits—is entirely disregarded. This simplification, while computationally convenient, renders the resulting dispatch schedules technically infeasible in practice: a schedule satisfying the aggregate power balance may simultaneously violate voltage limits or thermal ratings at specific internal nodes, necessitating post-hoc corrections that negate the claimed economic benefits.
+
+Recognising this gap, several recent works have incorporated linearized power flow models—primarily the LinDistFlow approximation—into P2P optimisation frameworks. Feng et al. [12] proposed a P2P trading mechanism under network constraints using a Generalised Fast Dual Ascent (GFDA) method, employing sensitivity analysis of nodal voltage and network loss with respect to nodal power injections to evaluate the impact of P2P transactions on distribution system security. The sensitivity-based approach internalizes network costs into the P2P clearing price in an endogenous manner, ensuring that the price signal reflects both energy value and delivery cost. In [13], AC power flow constraints—including voltage magnitude bounds and congestion limits—were incorporated into a P2P framework using ADMM, establishing a precedent for physically constrained decentralized trading. Liu and Wu [14] developed a fully decentralized P2P scheme for Active Distribution Networks (ADNs) that simultaneously achieves optimal energy trading and local voltage management through active and reactive power coordination, without any third-party intervention.
+
+However, a critical gap persists: while these works recognise the necessity of network constraints, they continue to rely on linearised DistFlow models or sensitivity-based approximations that neglect the nonlinear coupling between active power (P), reactive power (Q), voltage magnitude, and voltage angle inherent to real AC distribution networks. In high R/X ratio feeders—characteristic of the low-voltage MG interconnections through Soft Open Points (SOPs) considered in the present study—this coupling is particularly pronounced. The reactive power flows driven by inductive and capacitive DER components exert a dominant influence on nodal voltage profiles, and ignoring Q flows can introduce voltage prediction errors exceeding 5–10\% in heavily loaded feeders [15], leading to P2P schedules that appear feasible in the linearised model but violate AC power flow equations in practice.
+
+The role of reactive power in P2P energy trading has only recently begun to receive systematic attention. Liaquat et al. [16] proposed a decentralized voltage control scheme integrated with P2P trading in a distribution network, demonstrating that reactive power management by DER-equipped prosumers can significantly mitigate voltage violations arising from uncoordinated P2P active power transactions. The work highlights that the virtual (financial) layer and the physical (network) layer of P2P markets must be jointly optimized to prevent voltage violations that would otherwise require curtailment or external reactive power support.
+
+More comprehensively, [18] developed a holistic P2P market framework for both active and reactive energy trading in virtual power plants (VPPs), introducing a multi-stage P2P negotiation process that separates the regulatory, active, and reactive convergence stages for computational efficiency. The reactive energy P2P price is derived from the Lagrange multipliers of the voltage constraint, providing a voltage-reflective price signal that rewards participants providing reactive power support. This pricing principle is directly relevant to the present work: in a multi-MG system where reactive power exchange through SOPs affects voltage profiles across MG boundaries, the P2P clearing price must embed not only active power congestion costs but also the marginal cost of voltage regulation.
+
+The existing literature therefore reveals a critical unaddressed gap: no existing multi-MG P2P framework simultaneously (i) formulates local MG optimisation as a full AC-OPF problem incorporating Q flows and nodal voltage constraints, (ii) propagates voltage-reflective price signals through a decentralised ADMM coordination layer that operates across MG boundaries, and (iii) integrates this physically rigorous model with a cooperative game-theoretic profit sharing mechanism. The present paper fills this gap.
+
+The Alternating Direction Method of Multipliers (ADMM) has emerged as the dominant algorithmic framework for decentralised coordination in multi-MG P2P systems, owing to its convergence guarantees, decomposability of coupled constraints, and ability to operate through minimal boundary information exchange [19]. In the P2P context, ADMM decomposes the global trading problem into local sub-problems solved independently by each MG, with consensus enforced iteratively through dual variable updates that serve simultaneously as price signals.
+
+Hayati and Zare [20] demonstrated a fully decentralised ADMM-based P2P trading market in a local community incorporating shared compressed air energy storage (CAES), confirming that the ADMM framework preserves participant privacy while achieving near-optimal scheduling performance. Chen et al. [21] applied ADMM to a day-ahead Nash bargaining P2P scheme for multi-MGs with data-driven chance constraints, ensuring internal network feasibility and robustness against renewable and load forecast uncertainty. Importantly, these works establish that ADMM's dual variables—the Lagrange multipliers penalising consensus violations—can be interpreted directly as market-clearing prices, a property exploited in the present paper to construct voltage-reflective P2P price signals.
+
+A limitation shared by existing ADMM-based P2P frameworks is their formulation of local sub-problems as MILP or linear programming problems, which implicitly assumes that the LinDistFlow approximation is an adequate representation of the network physics. When the local sub-problem is upgraded to a full MINLP incorporating AC power flow equations, the ADMM decomposition remains valid, the nonconvexity is confined to each MG's local sub-problem, which is solved independently—but the convergence behaviour and the dual variable interpretation require re-examination. The present paper addresses this challenge by incorporating a dynamic penalty parameter adaptation scheme that maintains ADMM stability under the nonconvex AC-OPF sub-problems.
+
+A persistent challenge in multi-MG P2P trading is the equitable distribution of cooperative profits. Competitive trading mechanisms—in which MGs negotiate directly over bilateral prices—tend to produce skewed benefit distributions where net exporters (MGs with abundant renewable generation) capture the majority of the cooperative surplus, while net importers receive marginal gains insufficient to incentivise sustained coalition participation. This distributional asymmetry undermines the long-term stability of the trading coalition [22].
+
+Cooperative game theory provides a principled framework for redistributing cooperative profits based on each participant's marginal contribution. The two most widely employed solution concepts are the Shapley value and the Nucleolus. The Shapley value allocates profit in proportion to each player's average marginal contribution across all possible coalition orderings [23]; however, its computational complexity scales exponentially with the number of players, making it impractical for large coalitions. The Nucleolus, introduced by Schmeidler [24], minimises the maximum dissatisfaction (excess) of any sub-coalition, providing a unique allocation in the core of the game that is solvable via sequential linear programming regardless of coalition size.
+
+In the multi-MG literature, nucleolus-based profit sharing has been applied by [25],[26] to day-ahead scheduling problems, demonstrating core stability and individual rationality guarantees. Comparisons between Shapley value, Nucleolus, and Nash bargaining approaches [27] confirm that the Nucleolus is particularly appropriate when the number of players is moderate (3–10 MGs) and when Core stability—the property that no sub-coalition has an incentive to defect—is the primary fairness criterion. A cooperative game model incorporating Shapley value allocation for multi-MG systems with demand response was developed in [28], showing that cooperative scheduling combined with price-based demand response can reduce total operating costs while ensuring fair benefit distribution.
+
+A critical gap in existing cooperative game applications to P2P systems is their decoupling from physically rigorous network models. Existing works compute the characteristic function value v(S) of each coalition using simplified single-node or LinDistFlow models, meaning the cooperative profit is assessed without accounting for the voltage constraints and reactive power costs that determine physical feasibility. In a full AC-OPF setting, the characteristic function value of any sub-coalition S depends not only on the active power trading quantities but also on the reactive power flows and voltage profiles within the sub-coalition's network—a dependence that alters the marginal contribution of each participant and consequently affects the Nucleolus allocation. The present paper is the first, to the authors' knowledge, to integrate Nucleolus-based profit sharing with an AC-OPF-grounded characteristic function, ensuring that the fairness guarantee is physically consistent.
+
+\begin{table}[htbp]
+\huge
+\centering
+\caption{Comparison of the proposed model and the other methods}
+\label{tab:my-table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cccccccc}
+\hline
+\textbf{Paper}                                                                                                                                  & \textbf{\begin{tabular}[c]{@{}c@{}}Active \\ power\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Reactive \\ power\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Voltage \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Multi\\ nodes\end{tabular}} & \textbf{Optimization algorithm}                                      & \textbf{\begin{tabular}[c]{@{}c@{}}Privacy \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}DR \\ integration\end{tabular}} \\ \hline
+\cite{b16,b17,b18}                                                                                                                                             & -                                                                                               & x                                                                         & -                                                                                               & -                                                                                                 & \begin{tabular}[c]{@{}c@{}}GA, PSO, SSA, \\ WOA, FA,...\end{tabular} & -                                                                              & -                                                                  \\ \hline
+\cite{b19} & -                                                                                               & x                                                                         & x                                                                                               & -                                                                                                 & MISOCP                                                               & x                                                                              & x                                                                  \\ \hline
+\cite{b20}                                         & x                                                                                               & -                                                                         & -                                                                                               & -                                                                                                 & LP                                                                   & x                                                                              & -                                                                  \\ \hline
+\cite{b21,b22,b23,b24}                                             & -                                                                                               & x                                                                         & x                                                                                               & -                                                                                                 & MINLP, MILP                                                          & -                                                                              & -                                                                  \\ \hline
+\cite{b25}                                     & x                                                                                               & x                                                                         & -                                                                                               & -                                                                                                 & -                                                                    & -                                                                              & -                                                                  \\ \hline
+\cite{b26,b27,b28}                                                     & x                                                                                               & -                                                                         & -                                                                                               & -                                                                                                 & -                                                                    & -                                                                              & -                                                                  \\ \hline
+\cite{b30,b31,b32,b33} & -                                                                                               & x                                                                         & x                                                                                               & -                                                                                                 & -                                                                    & x                                                                              & x                                                                  \\ \hline
+\cite{b29}                                          & -                                                                                               & x                                                                         & -                                                                                               & -                                                                                                 & NNA with LP                                                          & x                                                                              & -                                                                  \\ \hline
+Proposed model                                                                                                                                                & x                                                                                               & x                                                                         & -                                                                                               & x                                                                                                 & SOCP                                                                 & x                                                                              & x                                                                  \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+The foregoing review reveals three interconnected gaps in the existing multi-MG P2P trading literature, summarised as follows:
+\begin{itemize}
+    \item Single-node MG simplification: The majority of existing P2P frameworks model each MG as a single aggregated node, enforcing only boundary power balance while neglecting the internal distribution network topology, line flow limits, and nodal voltage constraints. Schedules optimized under this assumption may be physically infeasible within the MG's actual network.
+    \item Linearized network model and absence of reactive power: Works that do incorporate network constraints predominantly use LinDistFlow approximations or sensitivity-based methods, which decouple P and Q flows and therefore fail to capture the voltage impact of reactive power exchange. In high-R/X ratio low-voltage feeders, this approximation error is substantial. No existing multi-MG P2P framework employs a full AC-OPF formulation within the local MG optimization. Consequently, the P2P trading price does not reflect the marginal cost of voltage regulation, providing no economic incentive for reactive power support services.
+    \item Cooperative fairness decoupled from physical feasibility: Existing applications of cooperative game theory to multi-MG systems compute the characteristic function using simplified network models. The resulting profit allocations may not be physically meaningful, as they do not account for the reactive power costs and voltage constraints that govern real AC network operation.
+    \item 1 nodes to multiple nodes, voltage, P, Q, loss.
+    \item comprehensive not only P, Q, loss, voltage. 
+    \item Advance ADMM to solve privacy. (tốc độ xử lý so với giải tập trungf)
+    \item 1 cơ chế/model phù hợp cho các đối tượng như MGs, DERs,... gain benefit when participating in P2P trading market.
+\end{itemize}
+
+\begin{itemize}
+    \item A comprehensive MILP framework is formulated to independently optimize the operation of each individual MG. Unlike conventional studies that simplify MGs as lumped nodes, this model incorporates multi-node network constraints to ensure technical feasibility at the local level for each autonomous entity.
+    \item An ADMM-based decentralized P2P trading scheme for a multi-MG cluster is proposed, enabling coordinated energy exchange while preserving participant privacy and autonomy.
+%     \item A fair profit-sharing scheme using the Nucleolus method is developed, which rewards each MG based on its marginal contribution and incentivizes stable, coalition-based trading.
+\end{itemize}
+
+
+
+\section{Problem Formulation}
+\subsection{Notations}
+The subscripts/superscripts $m$, $t$ denote the indices of MGs, time intervals respectively; their corresponding sets are represented by $\mathcal{M}$, $\mathcal{T}$, respectively. The subscript $n$ denote the indices of node contains dispatchable distributed generation (DG), renewable generation, and battery energy storage (BES) in each MG, and their corresponding sets are represented by $\mathcal{N}_{DG}$, $\mathcal{N}_{RE}$, and $\mathcal{N}_{BESS}$, respectively. The frequently used notations in this paper are illustrated in the Nomenclature. 
+
+Consider MG $m$ with a radial network as a connected tree $\mathcal{T}_m(\mathcal{N}_m,\; \mathcal{E}_m)$, where $\mathcal{N}_m := \{0,\; 1,\; \ldots,\; N\}$ and $\mathcal{E}_m$ represent the bus and line sets, respectively. The point of common coupling (PCC) is indexed as 0. Each bus $n$ is directly connected to a unique parent bus $\pi_n$ and perhaps a set of child buses, denoted by $\Lambda_n$. The buses are labeled from the upstream buses to the downstream buses in ascending order, i.e., $\pi_n < n$. Besides, the line pointing from the parent bus $\pi_n$ to bus $n$ is labeled as line $n$, and thus $\mathcal{E}_m := \{1,\; \ldots,\; N\}$.
+
+\subsection{Energy Management in Each MG}
+
+\subsubsection{System Model}
+\textbf{I. System constraints}
+
+To ensure physical feasibility and mathematical rigor, the distribution network is modeled using the Second-Order Cone Programming (SOCP) relaxed Branch Flow Model (DistFlow). This formulation is chosen for its ability to transform non-convex power flow equations into a convex optimization problem, ensuring global optimality and computational efficiency when utilizing commercial solvers.
+
+\begin{enumerate}
+    \item  \textbf{Nodal Power Balance Constraints} \\ 
+    For each node $n$ in the set of nodes $\mathcal{N}$ and at every time interval $t \in \mathcal{T}$, the equilibrium between power injection and consumption must be strictly maintained. These constraints incorporate various Distributed Energy Resources (DERs) and Peer-to-Peer (P2P) trading capabilities:
+    
+    \textbf{Active power balance constraint: }
+    
+    The following equation ensures that the net active power at each bus accounts for local generation, storage activity, and network losses:
+        \begin{equation}
+            \begin{aligned}
+            & P_{n,t} - r_n \ell_{n,t} + I_n^{DG} P_{n,t}^{DG} + I_n^{PV} P_{n,t}^{PV} + I_n^{Wind} P_{n,t}^{Wind} \\
+            & + I_n^{BESS} \left( P_{n,t}^{dis} - P_{n,t}^{chg} \right) + I_n^{trade} P_{n,t}^{trade} = P_{n,t}^{Load} + \sum_{j \in \Lambda_n} P{j,t} \\
+            & \forall n \in \mathcal{N}, \forall t \in \mathcal{T}
+            \end{aligned}
+            \label{eq:active_balance}
+        \end{equation}
+    \textbf{Reactive Power Balance constraint:}
+    
+    Similarly, reactive power balance is enforced to maintain the voltage profile and account for the reactive support from DGs and BESS units:
+        \begin{equation}
+            \begin{aligned}
+            & Q_{n,t} - x_n \ell_{n,t} + I_n^{DG} Q_{n,t}^{DG} +
+            & + I_n^{BESS} Q_{n,t}^{BESS} = Q_{n,t}^{Load} + \sum_{j \in \Lambda_n} Q{j,t} \\
+            & \forall n \in \mathcal{N}, \forall t \in \mathcal{T}
+            \end{aligned}
+            \label{eq:reactive_balance}
+        \end{equation}
+    \item \textbf{Network Physics and SOCP Relaxation}
+    
+    The physical relationship between voltage, current, and power flow is non-convex. We apply the SOCP relaxation technique to ensure the problem is solvable via commercial solvers like MOSEK or GUROBI.
+    
+    The physical relationship governing the voltage drop between a parent node $m =\pi_n$ and its child node $n$ is represented by:
+        \begin{equation}
+        U_{m,t} - U_{n,t} = 2(r_n P_{n,t} + x_n Q_{n,t}) - (r_n^2 + x_n^2) \ell_{n,t}
+        \label{eq:voltage_drop}
+        \end{equation}
+    The fundamental definition of the squared current magnitude, $\ell_{n,t} = \frac{P_{n,t}^2 + Q_{n,t}^2}{U_{m,t}}$, introduces a non-convex quadratic equality. To maintain tractability, this is relaxed into a convex inequality:
+        \begin{equation}
+        P_{n,t}^2 + Q_{n,t}^2 \le U_{m,t} \cdot \ell_{n,t}
+        \label{eq:socp_relaxation}
+        \end{equation}
+    For radial distribution networks, it has been theoretically established that the SOCP relaxation is exact under mild conditions, specifically when nodal power injections are not excessively high in the reverse direction and the objective function strictly increases with respect to branch power losses. As the proposed objective function includes a penalty for line currents and minimizes total operational costs, the optimal solution is naturally driven to the boundary of the second-order cone, thereby ensuring that the relaxation is tight.
+        
+    For implementation in high-performance solvers, this relaxation is rewritten in the standard rotated second-order cone format:
+    \begin{equation}
+        \begin{Vmatrix} 2P_{n,t} \\ 2Q_{n,t} \\ U_{m,t} - \ell_{n,t} \end{Vmatrix}_2 \le U_{m,t} + \ell_{n,t}
+        \label{eq:socp_format}
+    \end{equation}
+
+    \item \textbf{Operational and Security Limits}
+    
+    To preserve system integrity and power quality, the following technical boundaries are strictly enforced:
+    
+    \textbf{Voltage Security Constraints:} These ensure that nodal voltages remain within a permissible range (e.g., $\pm 5\%$ of the nominal value) to protect end-user equipment:
+    \begin{equation}
+    (V_{min})^2 \le U_{n,t} \le (V_{max})^2, \quad \forall n \in \mathcal{N}
+    \label{eq:voltage_limitss}
+    \end{equation}
+    
+    \textbf{Thermal Line Limits:} To prevent conductor overheating and ensure long-term asset health, the squared current magnitude is capped by the line's thermal capacity:
+    \begin{equation}
+    0 \le \ell_{n,t} \le (I_{max,n})^2, \quad \forall n \in \mathcal{N}
+    \label{eq:line_limits}
+    \end{equation}
+    \end{enumerate}
+    
+\textbf{II. Grid  objective function}
+
+To effectively differentiate between purchasing costs and selling revenues, the net power exchange at the root node (bus 0) is decomposed into two unidirectional components:
+
+\begin{equation}
+P_{0,t}^{line} = P_{grid,t}^{+} + P_{grid,t}^{-}, \quad \forall t \in \mathcal{T}
+\label{eq:grid_decomposition}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $P_{grid,t}^{+} \ge 0$: Power imported from the main grid (Import).
+    \item $P_{grid,t}^{-} \le 0$: Power exported to the main grid (Export).
+\end{itemize}
+
+The model incorporates a practical compensation mechanism that caps the amount of exported power eligible for revenue. Specifically, the total exported power $P_{grid,t}^{-}$ is partitioned into a remunerated component and a non-compensated surplus:
+\begin{equation}
+P_{grid,t}^{-} = P_{grid,t}^{paid} + P_{grid,t}^{free}, \quad \forall t \in \mathcal{T}
+\label{eq:export_decomposition}
+\end{equation}
+With the following boundary constraints:
+\begin{equation}
+-P_{exp}^{max} \le P_{grid,t}^{paid} \le 0
+\label{eq:paid_limit}
+\end{equation}
+\begin{equation}
+P_{grid,t}^{free} \le 0
+\label{eq:free_limit}
+\end{equation}
+In this formulation, $P_{exp}^{max}$ represents the maximum export capacity defined by the utility agreement. The component $P_{grid,t}^{free}$ accounts for any surplus energy injected into the grid exceeding this rated limit; while this power contributes to the overall system balance, it does not generate financial credit for the Microgrid.
+
+Consequently, the total grid-related cost ($\mathcal{F}_{grid}$) to be minimized in the global optimization problem is defined as:
+\begin{equation}
+\mathcal{F}_{grid} = \sum \limits_{t \in \mathcal{T}} \left( \pi_{buy,t} \cdot P_{grid,t}^{+} + \pi_{sell,t} \cdot P_{grid,t}^{paid} \right)
+\label{eq:grid_objective}
+\end{equation}
+Where:
+
+\begin{itemize}
+    \item $\pi_{buy,t}$: Purchasing price from the grid at time $t$ .
+    \item $\pi_{sell,t}$: Selling price compensated at time $t$.
+\end{itemize}
+
+\subsubsection{DG Operation Constraints}
+At the DA stage, the pre-dispatch of energy is decided for DGs to minimize the overall operation cost and to ensure the generation adequacy for the real-time adjustment. The total cost associated with DGs over the optimization horizon $\mathcal{T}$ and across the set of nodes containing DGs $\mathcal{N}_{DG}$ is by the objective function \eqref{eq:dg_total_cost}:
+\begin{equation}
+\mathcal{F}_{DG} = \sum \limits_{t \in \mathcal{T}} \sum_{n \in \mathcal{N}{DG}} \left( C{n,t}^{fuel} + C_{n,t}^{maint} + C_{n,t}^{startup} \right)
+\label{eq:dg_total_cost}
+\end{equation}
+
+The fuel cost component follows a classic quadratic characteristic as represented in \eqref{eq:fuel_cost}, which accounts for the varying efficiency of combustion engines at different loading points:
+\begin{equation}
+C_{n,t}^{fuel} = \alpha_n \cdot I_{n,t}^{DG} + \beta_n P_{n,t}^{DG} + \gamma_n (P_{n,t}^{DG})^2
+\label{eq:fuel_cost}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $\alpha_n$ [cents/h]: The fixed no-load cost coefficient, active only when the unit is online ($I_{n,t}^{DG}=1$).
+    \item $\beta_n$ [cents/MWh]: The linear fuel cost coefficient.
+    \item $\gamma_n$ $[cents/MW^2h]$: The quadratic cost coefficient, representing the second-order efficiency curve.
+    \item $P_{n,t}^{DG}$: The active power dispatched from the DG at node $n$ and time $t$.
+    \item $I_{n,t}^{DG} \in \{0, 1\}$ is the binary commitment variable indicating whether the unit is online ($1$) or offline ($0$).
+\end{itemize}
+
+To incorporate the wear and tear proportional to the energy produced, a linear maintenance cost is included as shown in \eqref{eq:maint_cost}:
+\begin{equation}
+C_{n,t}^{maint} = \eta_n P_{n,t}^{DG}
+\label{eq:maint_cost}
+\end{equation}
+Where $\eta_n$ represents the maintenance cost per unit of generated power.
+
+Furthermore, the economic penalty for transitioning a generator from an offline to an online state is modeled using the cold-start cost in \eqref{eq:startup_cost}:
+\begin{equation}
+C_{n,t}^{startup} = C_{n}^{SU} \cdot \delta_{n,t}\label{eq:startup_cost}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $C_{n}^{SU}$: The fixed cold-start cost coefficient 
+    \item $\delta_{n,t}$: A binary auxiliary variable that equals 1 if the DG at node $n$ starts up at time $t$, and 0 otherwise.
+\end{itemize}
+
+By combining these terms and allowing for separate tracking of fuel and maintenance economics through distinct coefficients $\beta_n$ and $\eta_n$, the resulting objective function component for DGs is expressed as:
+\begin{equation}
+\mathcal{F}_{DG} = \sum \limits_{t \in \mathcal{T}} \sum_{n \in \mathcal{N}{DG}} \left[ \alpha_n + (\beta_n + \eta_n) P_{n,t}^{DG} + \gamma_n (P_{n,t}^{DG})^2 + C_{n}^{SU} \delta_{n,t} \right]
+\label{eq:DG_cost}
+\end{equation}
+
+% \begin{equation}
+%     {\left( {S_{g,t}^{DG}} \right)^2} = {\left( {P_{g,t}^{DG}} \right)^2} + {\left( {Q_{g,t}^{DG}} \right)^2}
+% \tag{4b}
+% \end{equation}
+
+For each generator $n \in \mathcal{N}_{DG}$, the power output is restricted by its minimum and maximum physical capacities, coupled with its commitment status. And the set of equations \eqref{eq:power_balance} represent both the active and reactive power limits of DG: 
+\begin{subequations}
+    \begin{align}
+        \underline P_{n}^{DG} \cdot I_{n,t}^{DG} \le P_{n,t}^{DG} \le \bar P_{n}^{DG} \cdot I_{n,t}^{DG}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T}
+    \label{eq:DG_active_power} 
+    \end{align}
+    \begin{align}
+        \underline Q_{n}^{DG} \cdot I_{n,t}^{DG} \le Q_{n,t}^{DG} \le \bar Q_{n}^{DG} \cdot I_{n,t}^{DG}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T}
+        \label{eq:DG_reactive_power}
+    \end{align}
+    \label{eq:power_balance}
+\end{subequations}
+
+To prevent excessive mechanical stress and maintain stability during load changes, the variation in power output between consecutive time steps is bounded by the DG's ramping capability in \eqref{eq:dg_ramping}:
+\begin{subequations}
+\label{eq:dg_ramping}
+\begin{align}
+    P_{n,t}^{DG} - P_{n,t-1}^{DG} \le R_{n}^{up}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T}
+    \label{eq:ramp_p_up} \\
+    P_{n,t-1}^{DG} - P_{n,t}^{DG} \le R_{n}^{dn}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T}
+    \label{eq:ramp_p_dn} \\
+    Q_{n,t}^{DG} - Q_{n,t-1}^{DG} \le R_{n}^{up}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T}
+    \label{eq:ramp_q_up} \\
+    Q_{n,t-1}^{DG} - Q_{n,t}^{DG} \le R_{n}^{dn}, \quad \forall n \in \mathcal{N}_{DG}, \forall t \in \mathcal{T} \label{eq:ramp_q_dn}
+\end{align}
+\end{subequations}
+
+The binary variable $\delta_{n,t}$ acts as a detector for the transition from an offline to an online state, while $\zeta_{n,t}$ demonstrates the transition from an online to an offline state. The logic governing the transition between online and offline states is established through the commitment variable $I_{n,t}^{DG}$ and auxiliary indicators $\delta_{n,t}$ and $\zeta_{n,t}$, as formulated in \eqref{eq:startup_status}:
+\begin{subequations}
+\label{eq:startup_status}
+    \begin{align}
+    I_{n,t}^{DG} - &I_{n,t-1}^{DG} = \delta_{n,t} - \zeta_{n,t}, \quad \forall t \in \mathcal{T} \\
+    \label{eq:statup}
+    \end{align}
+    \begin{align}
+    &\delta_{n,t} + \zeta_{n,t} \le 1, \quad \forall t \in \mathcal{T}
+    \label{eq:startup_init}
+    \end{align}
+\end{subequations}
+This linear formulation ensures that $\delta_{n,t}=1$ whenever the unit is turned on, triggering the cold-start cost in the objective function. 
+
+To prevent frequent cycling of generators, which can lead to premature failure, the units must satisfy minimum up-time and down-time requirements:
+Equation \eqref{eq:min_up} ensures that if the unit is started at time $t$, it must maintain the On state ($I_{n,}^{DG}=1$) for at least the next $T_n^{up}$ time periods$T_n^{up}$ hours:
+\begin{equation}
+\sum_{\phi=t}^{t+T_n^{up}-1} I_{n,\phi}^{DG} \ge T_n^{up} \cdot \delta_{n,t}, \quad \forall t \in \{1, \dots, T - T_n^{up} + 1\}
+\label{eq:min_up}
+\end{equation}
+Similarly, equation \eqref{eq:min_down} ensures that if the unit is shut down at time $t$, it must maintain the Off state ($I_{n,}^{DG}=0$) for at least the next $T_n^{dn}$ time periods.
+\begin{equation}
+\sum_{\phi=t}^{t+T_n^{dn}-1} (1 - I_{n,\phi}^{DG}) \ge T_n^{dn} \cdot \zeta_{n,t}, \quad \forall t \in \{1, \dots, T - T_n^{dn} + 1\}
+\label{eq:min_down}
+\end{equation}
+
+To manage sudden load fluctuations or the intermittency of renewable generation, the system maintains a spinning reserve. The individual reserve contribution of each DG is defined by \eqref{eq:dg_reserve}:
+
+\begin{equation}
+R_{n,t}^{DG} = P_{n}^{max} \cdot I_{n,t}^{DG} - P_{n,t}^{DG}, \quad \forall n \in \mathcal{N}_{DG}
+\label{eq:dg_reserve}
+\end{equation}
+
+Finally, the total system reserve must meet a predefined security margin $\omega$ relative to the total capacity, as specified in \eqref{eq:system_reserve}:
+\begin{equation}
+\sum_{n \in \mathcal{N}{DG}} R{n,t}^{DG} \ge \omega \cdot \sum_{n \in \mathcal{N}{DG}} P{n}^{max}
+\label{eq:system_reserve}
+\end{equation}
+
+\subsubsection{BESS Operation Constraints}
+The pre-scheduling of energy for BESS is also implemented at the DA stage. 
+The degradation cost of BESS $\mathcal{F}_{BESS}$ is formulated as a linear function of charging and discharging power over the optimization horizon $\mathcal{T}$ for all nodes equipped with battery storage $\mathcal{N}_{BESS}$ as shown in equation \eqref{eq:bess_objective}, 
+\begin{equation}
+\mathcal{F}_{BESS} = \sum \limits_{t \in \mathcal{T}} \sum_{n \in \mathcal{N}{BESS}} \theta_{n} \left( \eta_{n}^{chg} P_{n,t}^{chg} + \frac{P_{n,t}^{dis}}{\eta_{n}^{dis}} \right)
+\label{eq:bess_objective}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $\theta_n$ is the cost coefficient associated with the lifetime degradation of the BESS. This reflects the cost per unit of energy throughput (cents/kWh).
+    \item $\mathcal{F}_{BESS}$: Total operational cost of the BESS storage units.
+    \item $P_{n,t}^{chg}, P_{n,t}^{dis}$: The active power charged into and discharged from the battery at node $n$ and time $t$, respectively.
+    \item $\eta_{n}^{chg}, \eta_{n}^{dis}$: The charging and discharging efficiencies.
+\end{itemize}
+
+The power exchanged with the battery is restricted by the inverter's power rating and the operational status of the unit. These technical limits are enforced through the inequalities in \eqref{eq:charge_limit} and \eqref{eq:discharge_limit}:
+\begin{subequations}
+    \begin{align}
+    0 \le P_{n,t}^{chg} \le P_{n,max}^{chg} \cdot u_{n,t}^{chg}, \quad \forall n \in \mathcal{N}_{BESS}, \forall t \in \mathcal{T}
+    \label{eq:charge_limit}
+    \end{align}
+    \begin{align}
+    0 \le P_{n,t}^{dis} \le P_{n,max}^{dis} \cdot u_{n,t}^{dis}, \quad \forall n \in \mathcal{N}_{BESS}, \forall t \in \mathcal{T}
+    \label{eq:discharge_limit}
+    \end{align}
+    \label{eq_bess_limits}
+\end{subequations}
+Where $u_{n,t}^{chg}$ and $u_{n,t}^{dis}$ are binary variables that indicate the charging and discharging states, respectively.
+
+To prevent the physically unrealistic and economically inefficient scenario of simultaneous charging and discharging, the following exclusivity constraint \eqref{eq:bess_exclusivity} is enforced:
+\begin{equation}
+u_{n,t}^{chg} + u_{n,t}^{dis} \le 1, \quad \forall u_{n,t}^{{chg, dis}} \in {0, 1}
+\label{eq:bess_exclusivity}
+\end{equation}
+This linear constraint ensures that at any given hour $t$, the battery can either charge, discharge, or remain idle, but never both.
+
+The State of Charge (SOC) represents the ratio of currently stored energy to the total energy capacity. The temporal evolution of the energy stored, considering the charging and discharging efficiencies, is governed by the SOC dynamics in \eqref{eq:soc_dynamics}:
+
+\begin{equation}
+SOC_{n,t} = SOC_{n,t-1} + \left( \frac{\eta_{n}^{chg} P_{n,t}^{chg} - P_{n,t}^{dis}/\eta_{n}^{dis}}{E_{n}^{cap}} \right), \quad \forall n \in \mathcal{N}_{BESS}, t \in \mathcal{T}
+\label{eq:soc_dynamics}
+\end{equation}
+
+To avoid deep discharge and overcharging, which drastically reduce the battery's lifespan, the SOC is constrained within a safe operating window as shown in \eqref{eq:soc_bounds}:
+
+\begin{equation}
+    SOC_{n}^{min} \le SOC_{n,t} \le SOC_{n}^{max}, \quad \forall n \in \mathcal{N}_{BESS}, \forall t \in \mathcal{T}
+    \label{eq:soc_bounds}
+\end{equation}
+
+To ensure operational continuity across consecutive scheduling days and to maintain a required level of energy readiness, the initial and final SOC boundary conditions are set in \eqref{eq:soc_boundary}:
+\begin{equation}
+    SO{C_{b,0}} = SOC_{b}^{initial};\,SO{C_{b,T}} = SOC_{b}^{final} 
+    \label{eq:soc_boundary}
+\end{equation}
+\subsubsection{Constraints of Renewable Energy (RE) Sources}
+Renewable energy sources are modeled as non-dispatchable but controllable units. In this framework, the output of PV and Wind systems is restricted by the maximum available power (forecasted peak) at any given time interval, while allowing for power curtailment to maintain grid stability and voltage regulation.
+
+The active power injected by Renewable Energy (RE) sources at node $n$ and time $t$ is limited by the forecasted resource availability. To ensure the optimization problem remains convex and physically feasible, the actual power output is restricted as shown in \eqref{eq:re_limit}:
+\begin{equation}
+0 \le P_{n,t}^{RE} \le P_{n,t}^{RE,peak}, \quad \forall n \in \mathcal{N}_{RE}, \forall t \in \mathcal{T}
+\label{eq:re_limit}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $P_{n,t}^{RE}$ is the actual active power generated by the PV unit.
+    \item $P_{n,t}^{RE,peak}$ is the maximum available power based on solar irradiance and panel efficiency.
+\end{itemize}
+
+\subsubsection{Trading Constraint}
+For every node designated as a trading node $n \in \mathcal{N}_{tr}$, the trading power at any time $t$ must remain within the rated contractual limits or the transmission capacity of the link. Based on the function, this constraint is expressed as:
+\begin{equation}
+    -P_{n,t}^{tr, max} \le P_{n,t}^{trade} \le P_{n,t}^{tr, max}, \quad \forall n \in \mathcal{N}_{tr}, \forall t \in \mathcal{T}
+    \label{eq:trading_limit}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $P_{n,t}^{trade}$: The trading power at node $n$ at time $t$.
+    \item Sign Convention: $P_{n,t}^{trade} > 0$ represents the Microgrid importing energy from external entities; 
+    $P_{n,t}^{trade} < 0$ represents the Microgrid exporting energy.
+    \item $P_{n,t}^{tr, max}$: The maximum allowable exchange power limit.
+\end{itemize}
+
+
+The trading cost is formulated as the product of the energy exchange volume and the price signal $\lambda_{n,t}^{\text{trade}}$ received from the centralized coordinator. The revenue of energy exchange between the Microgrid and neighboring networks through trading nodes over the entire operating period is established in \eqref{eq:trading_cost}:
+    \begin{equation}
+        \mathcal{F}_{trade} =\sum_{t \in \mathcal{T}} \sum_{n \in \mathcal{N}_{\text{trade}}} \lambda_{n,t}^{\text{trade}} P_{n,t}^{\text{trade}}
+        \label{eq:trading_cost}
+    \end{equation} 
+
+
+\subsubsection{Distributionally Robust Energy Management Model in Each MG}
+The global objective is to minimize the total operational cost $\mathcal{F}_{total}$ for each Microgrid, comprising grid interaction, generation, storage degradation, and trading consensus:
+\begin{equation}
+\min \mathcal{F}_{total} = \mathcal{F}_{grid} + \mathcal{F}_{DG} + \mathcal{F}_{BESS} + \mathcal{F}_{trade}
+\label{eq:total_cost}
+\end{equation}
+% \begin{equation}
+% \min \sum\limits_{t = 1}^T {\left\{ {\Omega _t^{m,1} + \Omega _t^{m,2} + \Omega _t^{m,3} + \Omega _t^{m,4}} \right\}}  \tag{9}
+% \end{equation}
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \hrule top
+     \renewcommand{\caption}[2][\relax]{% Make a learnt \caption
+       {\raggedright\textbf{~Algorithm~\thealgorithm:} ##2\par}%
+       \ifx\relax##1\relax\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}\else\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}\fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \hrule bottom
+   \end{center}
+  }
+\makeatother
+
+\begin{breakablealgorithm}
+    \caption{Day-Ahead SOCP Optimization for Microgrid Energy Management}
+    \small
+    \begin{algorithmic}[1]
+        \State \textbf{Initialize:} 
+        \Statex \quad Network topology $T_m(N_m, E_m)$, impedances $r_n, x_n$.
+        \Statex \quad Forecasted loads $P^{Load}_{n,t}, Q^{Load}_{n,t}$ and renewable limits $P_{n,t}^{RE,peak}$ \eqref{eq:re_limit}.
+        \State \textbf{System Constraints Formulation:}
+        \Statex \quad Apply DistFlow model and SOCP relaxation \eqref{eq:voltage_drop}, \eqref{eq:socp_format}.
+        \Statex \quad Enforce nodal power balance \eqref{eq:active_balance}, \eqref{eq:reactive_balance} and security limits \eqref{eq:voltage_limitss}, \eqref{eq:line_limits}.
+        \State \textbf{DERs Operational Logic:}
+        \Statex \quad \textbf{DG Units:} Set capacity limits \eqref{eq:power_balance}, ramping \eqref{eq:dg_ramping}, min up/down time \eqref{eq:min_up}--\eqref{eq:min_down}, and reserve contribution \eqref{eq:dg_reserve}.
+        \Statex \quad \textbf{BESS Units:} Set SOC dynamics \eqref{eq:soc_dynamics}, charge/discharge limits \eqref{eq_bess_limits}, and exclusivity \eqref{eq:bess_exclusivity}.
+        \State \textbf{Grid \& Trading Interaction:}
+        \Statex \quad Define grid import/export limits \eqref{eq:grid_decomposition}--\eqref{eq:free_limit} and P2P trading capacity \eqref{eq:trading_limit}.
+        \State \textbf{Optimization Objective:}
+        \Statex \quad Construct global cost function $F_{total} = F_{grid} + F_{DG} + F_{BESS} + F_{trade}$ \eqref{eq:total_cost}.
+        \Statex \quad \textit{(Optional)} If ADMM mode: Update Augmented Lagrangian with penalty $\rho$ \eqref{eq:admm_lagrangian}.
+        \State \textbf{Execution:}
+        \Statex \quad Solve the formulated SOCP problem using high-performance solvers (e.g., MOSEK).
+        \State \textbf{Output:} 
+        \Statex \quad Optimal schedules for BESS ($SOC_{n,t}$), DG ($I^{DG}_{n,t}, P^{DG}_{n,t}$), and Trading power ($P^{trade}_{n,t}$).
+    \end{algorithmic}
+    \label{SOCP_algorithm}
+\end{breakablealgorithm}
+
+\subsection{Cooperative game model for MG P2P trading}
+\vspace{10pt}
+\begin{breakablealgorithm}
+    \caption{Distributed Consensus ADMM with Dynamic Penalty for P2P Trading}
+    \small
+    \begin{algorithmic}[2]
+        \State \textbf{Initialize:} $P_{i,j,t}^{(0)}, Y_{i,j,t}^{(0)}, \lambda_{i,j,t}^{(0)}, \rho_{i,j,t}^{(0)}, C=0, \epsilon=10^{-4}, \mu=10, \tau=1.5$.
+        \Repeat
+            \State \textbf{Local Primal Update:} Each MG $i \in \mathcal{N}$ solves local SOCP to find $P_{i,j,t}^{(k+1)}$.
+            \State \textbf{Communication:} MGs $i$ and $j$ exchange plans $P_{i,j,t}^{(k+1)}$ and prices $\lambda_{i,j,t}^{(k)}$.
+            \State \textbf{Global Consensus Update:} Compute agreed trading power:
+            \Statex \qquad $Y_{i,j,t}^{(k+1)} \gets \frac{P_{i,j,t}^{(k+1)} - P_{j,i,t}^{(k+1)}}{2} + \frac{\lambda_{i,j,t}^{(k)} - \lambda_{j,i,t}^{(k)}}{2\rho_{i,j,t}^{(k)}}$.
+            \State \textbf{Dual Update:} 
+            \Statex \qquad $\lambda_{i,j,t}^{(k+1)} \gets \lambda_{i,j,t}^{(k)} + \rho_{i,j,t}^{(k)} \left(P_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k+1)}\right)$.
+            \State \textbf{Residuals:} 
+            \Statex \qquad $r_{i,j,t}^{(k+1)} \gets \left(P_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k+1)}\right)^2$; \quad $s_{i,j,t}^{(k+1)} \gets \left(\rho_{i,j,t}^{(k)} \left|Y_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k)}\right|\right)^2$.
+            \State \textbf{Penalty Update:} 
+            \Statex \qquad $\rho_{i,j,t}^{(k+1)} \gets \begin{cases} \rho_{i,j,t}^{(k)} \cdot \tau & \text{if } r_{i,j,t}^{(k+1)} > \mu \cdot s_{i,j,t}^{(k+1)} \\ \rho_{i,j,t}^{(k)} / \tau & \text{if } s_{i,j,t}^{(k+1)} > \mu \cdot r_{i,j,t}^{(k+1)} \\ \rho_{i,j,t}^{(k)} & \text{otherwise} \end{cases}$
+            \State \textbf{Convergence Check:} 
+            \Statex \qquad \textbf{if} $\max(r_{i,j,t}^{(k+1)}) \le \epsilon$ \textbf{and} $\max(s_{i,j,t}^{(k+1)}) \le \epsilon$ \textbf{then} $C \gets C + 1$ \textbf{else} $C \gets 0$.
+            \State $k \gets k + 1$
+        \Until{$C \ge 3$
+    }
+    \end{algorithmic}
+    \label{ADMM_algorithm}
+\end{breakablealgorithm}
+
+In this study, the energy management and coordination of the multi microgrid (MMG) system are orchestrated through a decentralized framework based on the Alternating Direction Method of Multipliers (ADMM). This approach is essential for modern grids, where centralized control often becomes impractical due to communication bottlenecks and data sensitivity. By utilizing ADMM, the proposed model achieves a high level of information privacy, as each microgrid (MG) functions as an independent agent that manages its own internal data without external interference. Unlike centralized dispatch models that require full transparency of every participant’s operational parameters, ADMM necessitates only the exchange of minimal boundary variables and Lagrange multipliers. This mechanism ensures that sensitive information, such as generation cost curves and local load profiles, remains confidential, thereby fostering a secure and trustworthy environment for peer-to-peer (P2P) energy trading.
+
+The efficacy of this approach is further enhanced by its inherent ability to decompose the global optimization problem into smaller, mathematically manageable sub-problems, allowing each MG to maintain full operational autonomy. Within this decentralized structure, each MG independently optimizes its local distributed energy resources—such as the solar PV and battery storage systems depicted in image 1 while iteratively coordinating with its neighbors to satisfy global network constraints.
+This decomposition is particularly advantageous for the interconnected architecture shown in image 2, where diverse microgrids cooperate to solve their respective Second-Order Cone Programming (SOCP) power flow equations at the local level. Because these localized optimization tasks are executed in parallel, the framework exhibits remarkable scalability and computational efficiency. As the number of microgrids or active nodes in the network increases, the overall calculation time does not grow exponentially, establishing ADMM as a superior solution for the real-time operation of increasingly complex and expanding power systems.
+
+Let $\mathcal{M} := \left\{ {0,1,2,...,M} \right\}$ denote the set of power grids, where $0$ (indexed as $MG_0$) represents the main grid, and the remaining elements signify the microgrids. 
+The global objective function for the collective set of microgrids $m \in \mathcal{M}$ is formulated by extending the individual objective $\mathcal{F}_{total}$ in equation \eqref{eq:total_cost} to incorporate the power trading equilibrium constraints. 
+
+\begin{equation}
+\min \mathcal{F}_{total} =
+\left\{ \begin{array}{l}
+\sum\limits_{i=1}^{\mathcal{M}} \mathcal{F}_{grid} + \mathcal{F}_{DG} + \mathcal{F}_{BESS} + \mathcal{F}_{trade}\\
+s.t. Constraint \,\,\,\eqref{eq:active_balance} - \eqref{eq:trading_cost}\,
+\end{array} \right.
+\label{eq:individual_eq}
+\end{equation}
+
+While equation \eqref{eq:individual_eq} completely defines the independent operational scheduling of
+an isolated Microgrid, participating in a Peer-to-Peer (P2P) trading network
+requires strict energy coordination among neighboring MGs. To maintain the
+physical balance of the power flow, the planned trading power exported from MG i
+to MG j must be exactly equal and opposite to the imported power expected by MG
+j from MG i. This cooperative behavior is formulated as the following coupling
+constraint: 
+\begin{equation} 
+P_{i,j,t} + P_{j,i,t} = 0 \quad \forall j \in
+\mathcal{N}e_i, \forall t \in \mathcal{T} \label{eq:coupling_constraint}
+\end{equation} 
+
+Where $P_{i,j}^{t}$ is the optimized trading power variable of MG i, and $P_{j,i}^t$ is the expected trading power from its neighbor j. The set $\mathcal{N}e_i$ represents all neighboring MGs directly connected to MG i.
+
+Solving a global optimization problem \eqref{eq:individual_eq} with the constraint (\ref{eq:coupling_constraint}) centrally would require extensive data sharing,
+compromising the privacy of individual MGs. Therefore, the ADMM is employed to decouple this global constraint.
+Based on the Augmented Lagrangian Method, the strict coupling constraint is relaxed and integrated directly into the local objective function.
+
+We define $X_i$ represents the set of all internal decision variables of MG $i$, $f_i(\mathbf{X}_i)$ is the local operating cost function corresponding to equation \eqref{eq:total_cost}. Assume that the values $\lambda_{i,j,t}^{(k)}$ and $\rho_{i,j,t}^{(k)}$ are parameters fixed from the previous step. By treating the expected power $P_{j,i,t}^{(k)}$ received from neighboring MG $j$ as a known parameter at iteration $k$, each MG i updates its local scheduling by minimizing the new Augmented Lagrangian objective function, which incorporates both the local operational costs and the ADMM trading penalty terms: 
+
+\begin{equation}
+    \mathcal{L}_i^{(k)}(\boldsymbol{X}_i) = f_i(\boldsymbol{X}_i) + \sum_{j \in \mathcal{N}_i} \sum_{t \in T} \left[ \lambda_{i,j,t}^{(k)} \left( P_{i,j,t} + P_{j,i,t}^{(k)} \right) + \frac{\rho_{i,j,t}^{(k)}}{2} \left\| P_{i,j,t} + P_{j,i,t}^{(k)} \right\|_2^2 \right] 
+\end{equation}
+
+To solve the P2P trading problem in a fully distributed manner and enhance numerical stability, the Consensus ADMM method is applied. Instead of directly imposing a strict matching constraint between two adjacent MGs, an intermediate consensus variable $Y_{i,j,t}$ is introduced. The variable $Y_{i,j,t}$ serves as the "compromise trading power" that both MG $i$ and MG $j$ aim toward, with the property $Y_{i,j,t} = -Y_{j,i,t}$.At this point, the original coupling constraint $P_{i,j,t} + P_{j,i,t} = 0$ is decoupled into local constraints: $P_{i,j,t} - Y_{i,j,t} = 0$. The Augmented Lagrangian objective function at iteration $k$ for Microgrid $i$ is rewritten as:
+
+\begin{equation}
+    \mathcal{L}_i^{(k)}(\boldsymbol{X}_i) = f_i(\boldsymbol{X}_i) + \sum_{j \in \mathcal{N}_i} \sum_{t \in T} \left[ \lambda_{i,j,t}^{(k)} \left( P_{i,j,t} - Y_{i,j,t}^{(k)} \right) + \frac{\rho_{i,j,t}^{(k)}}{2} \left\| P_{i,j,t} - Y_{i,j,t}^{(k)} \right\|_2^2 \right] 
+    \label{eq:admm_lagrangian}
+\end{equation}
+
+The distributed optimization process is carried out through 3 main iterative steps:
+
+\begin{enumerate}
+    \item \textbf{Primal Variable Update}
+    
+    At iteration $k+1$, each MG $i$ operates as an independent agent, solving its local SOCP problem to determine the optimal scheduling strategy while minimizing the deviation of trading power from its neighbors' expectations.
+
+    \begin{equation}
+        \mathbf{X}_i^{(k+1)} = argmin \mathcal{L}_i^{(k)}(\mathbf{X}_i) \quad 
+    \end{equation}
+    Following this, neighboring MGs exchange their tentative plans and dual multipliers $(P_{i,j,t}^{(k+1)}, \lambda_{i,j,t}^{(k)})$.
+
+    \item \textbf{Global Consensus Update:}
+    
+    Based on the exchanged information, the consensus variable $Y_{i,j,t}$ is updated via distributed averaging. By solving the first-order optimality condition of the global Lagrangian with respect to $Y$, the exact analytical solution for the new agreed power is obtained:
+    \begin{equation}
+    Y_{i,j,t}^{(k+1)} = \frac{P_{i,j,t}^{(k+1)} - P_{j,i,t}^{(k+1)}}{2} + \frac{\lambda_{i,j,t}^{(k)} - \lambda_{j,i,t}^{(k)}}{2\rho_{i,j,t}^{(k)}} \label{eq_15}
+    \end{equation}
+    The symmetric value for MG $j$ is simply $Y_{j,i,t}^{(k+1)} = -Y_{i,j,t}^{(k+1)}$. This step acts as a virtual market clearing mechanism, neutralizing the supply-demand mismatch based on the dual price signals.
+
+    \item \textbf{Dual and Dynamic Penalty Update:}
+    
+    Each MG subsequently updates its dual variable $\lambda$ for the next iteration:
+    \begin{equation}
+    \lambda_{i,j,t}^{(k+1)} = \lambda_{i,j,t}^{(k)} + \rho_{i,j,t}^{(k)} \left( P_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k+1)} \right) 
+    \label{eq:price_lambda}
+    \end{equation}
+    
+    To ensure rapid convergence across various market conditions, a dynamic penalty update mechanism is maintained. Under the Consensus ADMM structure, the primal and dual residuals are redefined as:
+    \begin{equation}
+    r_{i,j,t}^{(k+1)} = \left\| P_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k+1)} \right\|_2^2, \quad s_{i,j,t}^{(k+1)} = \left\| \rho_{i,j,t}^{(k)} \left( Y_{i,j,t}^{(k+1)} - Y_{i,j,t}^{(k)} \right) \right\|_2^2 \label{eq_17}
+    \end{equation}
+    The penalty parameter $\rho$ is dynamically adjusted to balance these residuals:
+    \begin{equation}
+    \rho_{i,j,t}^{(k+1)} = 
+    \begin{cases} 
+    \rho_{i,j,t}^{(k)} \cdot \tau, & \text{if } r_{i,j,t}^{(k+1)} > \mu \cdot s_{i,j,t}^{(k+1)} \\
+    \rho_{i,j,t}^{(k)} / \tau, & \text{if } s_{i,j,t}^{(k+1)} > \mu \cdot r_{i,j,t}^{(k+1)} \\
+    \rho_{i,j,t}^{(k)}, & \text{otherwise}
+    \end{cases} \label{eq_18}
+    \end{equation}
+\end{enumerate}
+
+\section{Numerical Results}
+To comprehensively evaluate the effectiveness and adaptability of the proposed ADMM-based decentralized peer-to-peer (P2P) energy trading algorithm, the optimization model is tested on multi-microgrid (MMG) distribution networks with increasing structural complexity. The simulation process focuses on verifying the economic benefits, validating the convergence of the distributed algorithm, and ensuring technical feasibility through inequality-form SOCP relaxation constraints, which guarantee the absolute convergence of the convex solver for the Alternating Current Optimal Power Flow (AC-OPF) problem.
+Specifically, to highlight the superiority of the proposed P2P framework, both study scenarios below conduct direct comparative simulations between two states: independent operation and cooperative operation. The evaluation focuses on the shift in the network's operational state and the physical connection structure modifications that facilitate the transactions.
+    \subsection{Simulation Setup and System Parameters}
+    All simulations are conducted on a workstation running Windows 11 Pro (64-bit). The hardware configuration consists of an AMD Ryzen 5 5600X processor with a clock speed of 3.70 GHz and 16.0 GB of RAM. On the software side, the mathematical models are implemented in Python using the Pyomo optimization library. For the complex SOCP relaxations, high-performance commercial solvers MOSEK are utilized to obtain global optimal solutions, ensuring fast convergence and high numerical precision across all research scenarios.
+
+    The technical and economic parameters of the Distributed Generator (DG) and the Battery Energy Storage System (BESS) are detailed in Table \ref{table:DG_BESS_parameters}. The DG unit operates within a power range of $0.2-1.3 \text{ MW}$ with a ramp rate limit of $1 \text{ MW}$. Its minimum up/down time is maintained at $2 \text{ hours}$ to ensure operational stability. For the BESS, the nominal energy capacity is $1.5 \text{ MWh}$ with a maximum power rating of $0.75 \text{ MW}$. The state of charge (SOC) is constrained between $0.2$ and $0.95$ to prevent battery degradation, while the round-trip efficiency is set at $0.9$. Furthermore, the renewable energy components consist of a Photovoltaic (PV) system and a Wind turbine with rated capacities of $0.6 \text{ MWp}$ and $1.7 \text{ MWp}$, respectively.
+    
+    \begin{table}[htbp]
+      \centering
+      \caption{ DG and BESS }
+      \begin{tabular}{lc p{0.5cm} lc} % p{1cm} tạo khoảng cách giữa 2 bảng
+        \toprule
+        \multicolumn{2}{c}{\textbf{DG}} & & \multicolumn{2}{c}{\textbf{BESS}} \\
+        \cmidrule{1-2} \cmidrule{4-5}
+        \textbf{Parameter} & \textbf{Value} & & \textbf{Parameter} & \textbf{Value} \\
+        \midrule
+        $\underline{P}^{DG}$      & 0.2MW    & & ($E_{n}^{\text{nom}}$)& 1.5MWh   \\
+        $\overline{P}^{DG}$       & 1.3MW   & & $\eta $             & 0.9   \\
+        $\Delta P_{DG}^{\max}$    & 1MW   & & $P_{n,\max}^{\text{BESS}}$     & 0.75MW    \\
+        $T^{DG}_{up}$/$T^{DG}_{down}$ & 2 hours     & & $SOC_{min}$         & 0.2   \\
+        $C_{DG}^{hot}$            & 660 cents   & & $SOC_{max}$         & 0.95  \\
+        $C_{DG}^{cold}$           & 1120 cents  & & $SOC_{ini}$         & 0.4   \\
+        $\alpha$                  & 700   & & $\theta_{BESS}$            & 0.2   \\
+        $\beta$                   & 16.06 & &                     &       \\
+        $\theta$                  & 0.002 & &                     &       \\
+        $\kappa$                    & 1.258 & &                     &       \\
+        \bottomrule
+      \end{tabular}
+      \label{table:DG_BESS_parameters}
+    \end{table} 
+    
+    The Time-of-Use (TOU) tariffs of the main grid are integrated into the price comparison chart as illustrated in Figure \ref{fig:price}. Specifically, the grid purchase price ($P_{buy}$) and the sell-back price ($P_{sell}$) are represented by red dashed lines, serving as the benchmark bounds for the P2P trading prices. This visual integration provides a clear overview of the correlation between the negotiated internal prices and the actual grid market fluctuations across the simulation period.
+
+    The proposed energy management and P2P trading framework is validated using a modified IEEE 123-bus distribution network. To ensure numerical stability and standardized modeling across the multi-level architecture, all physical parameters are converted into the per-unit (pu) system, with the base power for the entire network set at $S_{base} = 1 \text{ MVA}$.  The voltage bases are assigned according to the operational roles defined in the two study cases. For the Main Grid (designated as $MG_0$ ), which serves as the central infrastructure in Case 1 and the primary energy security provider in Case 2, a base voltage of $U_{base} = 22 \text{ kV}$ is utilized to derive the corresponding base impedance ($Z_{base}$) and base current ($I_{base}$). In contrast, the individual Microgrid clusters ($MG_1, MG_2, MG_3,$ and $MG_4$), which encompass various distributed energy resources such as PV systems and battery storage, operate at a lower base voltage of $U_{base} = 4.8 \text{ kV}$.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\textwidth]{Figure/Case1.png}
+        \caption{Layout of the maingrid connected to 3 MGs system}
+        \label{fig:system_MG0123}
+    \end{figure}
+    \subsection{Case 1: Main grid connected to 3 MGs}
+    The first scenario which demonstrated on Figure \ref{fig:system_MG0123} simulates a distribution network structure where the main grid acts as the intermediary infrastructure linking three MGs. Comparing the system before and after applying P2P trading aims to clarify the shift in the grid's operational state. Before trading, the MGs operate entirely in an independent, islanded mode, where each microgrid must resolve its supply-demand balance using internal resources with absolutely no energy exchange with the main grid. After initiating cooperative trading, the main grid directly participates in the system, allowing the microgrids to transition to an interconnected mode. In this state, they can share and trade surplus power with one another via the main grid's transmission infrastructure. Consequently, the simulation results in this scenario will demonstrate how the P2P trading mechanism helps the MGs overcome the strict technical limitations of isolated operation, thereby optimizing overall resources to reduce costs while satisfy the physical constraints. 
+
+    \subsubsection{Economic Performance and Algorithmic Convergence}
+    \label{sec:lv1:economic_performance}
+    To evaluate the economic viability and computational robustness of the proposed framework, we first analyze the daily operational costs of the multi-microgrid (MMG) system. Table \ref{tab:mg-cost-comparison} presents a comprehensive cost comparison among three operational paradigms: the Base Model (isolated operation), the Concentrate Model (centralized dispatch), and the proposed SOCP-ADMM Model (decentralized peer-to-peer trading).
+
+    \begin{table}[htbp]
+        \centering
+        \caption{Comparison of operation costs for different models (in cents)}
+        \label{tab:mg-cost-comparison}
+        \renewcommand{\arraystretch}{1.4} 
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{MG} & \textbf{\begin{tabular}[c]{@{}c@{}}Base Cost\\ (cents)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Concentrate\\ Model (cents)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}SOCP ADMM\\ Model (cents)\end{tabular}} & \textbf{\% Change} \\ \hline
+        0 & 96,495.66 & 117,582.56 & 76,709.12 & 20.51\% \\ \hline
+        1 & 88,765.23 & 71,330.85 & 69,350.11 & 21.87\% \\ \hline
+        2 & 159,343.31 & 75,184.88 & 134,002.49 & 15.90\% \\ \hline
+        3 & 28,777.03 & 17,765.07 & 1,788.03 & 93.79\% \\ \hline
+        \textbf{SUM} & \textbf{373,381.23} & \textbf{281,863.37} & \textbf{281,849.75} & \textbf{24.51\%} \\ \hline
+        \end{tabular}
+    \end{table}
+
+    A critical metric for any decentralized algorithm is its ability to approach the theoretical global optimum. As observed in Table \ref{tab:mg-cost-comparison}, the total cost obtained by the fully decentralized SOCP-ADMM model ($281,849.75 \text{ cents}$) perfectly matches the benchmark established by the Concentrate Model ($281,863.37 \text{ cents}$). The negligible difference between the two frameworks demonstrates that the dynamic penalty mechanism ($\rho_{i,j,t}$) and the dual price updates ($\lambda_{i,j,t}$) in Algorithm \ref{ADMM_algorithm} successfully force the primal trading variables ($P_{i,j,t}$) to reach an absolute consensus. This proves that the ADMM approach mathematically guarantees a global optimal AC-OPF solution without requiring a central coordinator or compromising the data privacy of individual MGs.
+
+    From a macro perspective, transitioning from an isolated operational state to a cooperative P2P trading network yields substantial economic benefits. In the Base Model, where each microgrid strictly relies on internal distributed energy resources (DERs) and unilateral grid transactions to satisfy the nodal power balance contraint (EQ.\eqref{eq:active_balance} and EQ.\eqref{eq:reactive_balance} ), the total system cost accumulates to $373,381.23 \text{ cents}$. By enabling interconnected P2P energy exchange, the proposed SOCP-ADMM framework drastically reduces the total operational cost to $281,849.75 \text{ cents}$, achieving a remarkable system-wide saving of $91,531.48 \text{ cents}$ (a 24.51\% reduction). This economic surplus is physically driven by the elimination of stranded renewable energy and the substitution of expensive local generation. The algorithm natively routes excess, zero-marginal-cost renewable power from generation-heavy MGs to load-heavy MGs, effectively minimizing the reliance on high-tariff main grid imports ($\pi_{buy,t}$) and costly diesel generator dispatch ($\mathcal{F}_{DG}$).
+    \subsubsection{Spatiotemporal Power Dispatch and Renewable Energy Integration}
+    \label{sec:lv2:spatiotemporal_dispatch}
+    The dramatic reduction in total operational expenditure is primarily attributed to the transition from a self-consumption mandate to a collaborative-exchange paradigm. This shift is analyzed through two critical lenses: the mitigation of renewable energy (RE) curtailment and the reconfiguration of the Energy Management System (EMS) priorities.
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Figure/REcurtailment.png}
+        \caption{}
+        \label{fig:REcurtailment}
+    \end{figure}
+
+    The simulation results in figure \ref{fig:REcurtailment} illustrate a stark contrast between the isolated (Base) and cooperative (P2P) scenarios.
+    \begin{itemize}
+        \item In the Base Case, the system exhibits severe oversupply during peak solar irradiance (hours 8 to 16). Due to the isolated nature of the Microgrids, MG3 and MG1 reach their local hosting capacity limits—where internal demand is met and BESS units reach their maximum State of Charge as represented in figure \ref{fig:SOC_BASE}. Consequently, the system is forced to curtail up to 3.7 MW of zero-marginal-cost energy to maintain nodal power balance (Eq. \eqref{eq:active_balance} and Figure \ref{fig:REcurtailment}). This curtailment not only represents a significant economic loss but also undermines the environmental benefits of renewable generation.
+        \item Upon the activation of the SOCP-ADMM framework, the total curtailment (indicated by the black trajectory in figure \ref{fig:REcurtailment}) drops nearly to zero. By unblocking the trading way, the algorithm allows surplus RE to be exported via the consensus variable $Y_{i,j,t}$. This energy, which was previously lost, is now rerouted to deficit microgrids, effectively transforming a technical waste into a marketable commodity.
+    \end{itemize}
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG0}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMSbase/MG0.png} \vspace{4pt}
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMSbase/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMSbase/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMSbase/MG3.png}
+            \caption{Base Case}
+            \label{fig:EMS_BASE}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG0}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMStrade/MG0.png} \vspace{4pt}
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMStrade/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMStrade/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/EMStrade/MG3.png}
+            \caption{Trade Case}
+            \label{fig:EMS_TRADE}
+        \end{subfigure}
+        \caption{Internal dispatch behavior of MG0--MG3 in Base (left) and P2P Trade (right) scenarios.}
+    \end{figure}
+
+    The internal dispatch behavior, captured in figure \ref{fig:EMS_BASE} and figure \ref{fig:EMS_TRADE}, reveals the causal relationship between trading and cost avoidance:
+    \begin{itemize}
+        \item \textbf{Export-Driven Strategy (MG1 \& MG3)}: In the Base Case, MG1 and MG3 are constrained by their local load profiles (the blue line). In the P2P scenario, these microgrids exhibit significant negative power bars (P2P Export). By utilizing the SOCP-relaxed Branch Flow Model (Eq.\eqref{eq:individual_eq}), the decentralized controller identifies that exporting surplus PV and Wind power is more economically beneficial than idling the assets.
+        \item \textbf{Import-Driven Substitution (MG2)}: MG2 serves as the primary beneficiary of this flow reconfiguration. In the Base Case, MG2 is forced to dispatch expensive local Distributed Generators (DG), represented by the prominent red bars in figure \ref{fig:EMS_BASE}, incurring significant fuel and maintenance costs ($\mathcal{F}_{DG}$ in Eq. \eqref{eq:DG_cost}). In the P2P scenario, MG2 intelligently substitutes this high-cost local generation with imported RE from MG1 and MG3. The energy trading with MG0/MG1/MG3 components (yellow bars in figure \ref{fig:EMS_TRADE}) effectively push the DG dispatch to its minimum stable limit ($P_{DG,min}$), directly slashing the $\mathcal{F}_{total}$ for the coalition.
+    \end{itemize}
+    This shift in behavior does not occur randomly, but is driven entirely by the LMP price signal shown in Figure \ref{fig:price} and analysis in section \ref{sec:lv5:price_analysis}. The ADMM algorithm demonstrates that the cost of importing from MG1/MG3, even with the added transmission loss costs, is still significantly lower than the quadratic cost of running the internal Diesel generator.
+    \subsubsection{Technical Trade-offs: Spatial Network Losses vs. Temporal Storage Optimization}
+    % 5. system case.png
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/BESS/BASE_BESS.png}
+            \caption{SOC Profile (Base)}
+            \label{fig:SOC_BASE}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/BESS/Trade_BESS.png}
+            \caption{SOC Profile (Trade)}
+            \label{fig:SOC_TRADE}
+        \end{subfigure}
+        
+        \vspace{10pt}
+        
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/BESS/BASE_degration.png}
+            \caption{Degradation Cost (Base)}
+            \label{fig:DEG_BASE}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/BESS/Trade_degration.png}
+            \caption{Degradation Cost (Trade)}
+            \label{fig:DEG_TRADE}
+        \end{subfigure}
+        \caption{BESS Operational Analysis: Comparing State of Charge (SOC) profiles and degradation costs between Base and P2P Trade scenarios.}
+        \label{fig:BESS_ANALYSIS}
+    \end{figure}
+    These theoretical and analytical points are visually confirmed by the graphs presented in Figure \ref{fig:BESS_ANALYSIS}. Comparing the SOC profiles, the standalone scenario (Figure \ref{fig:SOC_BASE}) exhibits extreme fluctuations across all microgrids. The deep charge-discharge cycles seen here represent the overutilization of batteries as an inefficient energy sink, resulting in substantial, wasteful energy time shifting. Conversely, the P2P market mechanism (Figure \ref{fig:SOC_TRADE}) significantly flattens these SOC curves. Most notably, the SOC of MG3 (the green line) remains virtually constant. This is the direct visual proof that wasteful charging cycles and the corresponding round-trip efficiency losses which were prevalent in the base case have been thoroughly eliminated. MG3 is no longer overexploited for basic energy shifting, but is rather preserved for higher-value services.
+
+    This pivotal shift to an efficient, trade-centric prioritization is also mirrored in the corresponding degradation cost bar charts. In the Base scenario (Figure \ref{fig:DEG_BASE}), degradation costs are exorbitant and widely distributed, confirming the massive expense incurred by deep cycling. The P2P scenario (Figure \ref{fig:DEG_TRADE}), however, reveals a drastic reduction in the total degradation expenses. Notice how the degradation cost for MG3 (the green stack in the bars) practically disappears, while the costs for MG1 and MG2 (the blue and orange stacks) are now strategically localized at specific peak hours. This demonstrates that the battery storage is liberated from the conventional role of mere Energy Time-shifting, pivoting towards a more advanced objective: acting as Congestion Buffers and providing Voltage Support at the physical bottlenecks within the DistFlow mode.     
+
+    The transition from isolated operation to a cooperative P2P market is not free. It involves a fundamental trade-off: the system accepts higher spatial power losses in exchange for significantly reduced temporal storage degradation and operational costs.
+
+    \begin{table}[htbp]
+        \centering
+        \caption{Analysis of Losses and Percentage Ratio on Load}
+        \label{tab:loss_analysis}
+        \setlength{\tabcolsep}{2pt} 
+        \footnotesize 
+        \newcolumntype{C}{>{\centering\arraybackslash}X}
+        \begin{tabularx}{\textwidth}{l C C C C C C}
+            \toprule
+            & \multicolumn{2}{c}{\textbf{Loss (MWh)}} & \textbf{Load} & \multicolumn{2}{c}{\textbf{\% Loss/Load}} & \textbf{Dif} \\
+            \cmidrule(lr){2-3} \cmidrule(lr){5-6}
+            \textbf{MG} & \textbf{Base} & \textbf{Trade} & \textbf{(MWh)} & \textbf{Base} & \textbf{Trade} &  \\
+            \midrule
+            0 & 0.61 & 1.12 & 56.00 & 1.091\% & 1.992\% & -0.90\% \\
+            1 & 0.43 & 0.56 & 62.66 & 0.693\% & 0.893\% & -0.20\% \\
+            2 & 0.32 & 0.32 & 58.47 & 0.553\% & 0.555\% & -0.00\% \\
+            3 & 0.09 & 0.16 & 24.58 & 0.358\% & 0.670\% & -0.31\% \\
+            \midrule
+            \textbf{SUM} & \textbf{1.46} & \textbf{2.16} & \textbf{201.71} & \textbf{0.722\%} & \textbf{1.073\%} & \textbf{-0.35\%} \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+
+    Data from the table \ref{tab:loss_analysis} reveals a significant increase in active power losses. The total system loss rises from 1.46 MWh (Base) to 2.16 MWh (Trade), representing a 0.35\% increase compared to the load.
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/LOSS/MG0.png}
+            \caption{Hourly Loss (MG0)}
+            \label{fig:LOSS_MG0}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/LOSS/MG1.png}
+            \caption{Hourly Loss (MG1)}
+            \label{fig:LOSS_MG1}
+        \end{subfigure}
+
+        \vspace{10pt}
+
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/LOSS/MG2.png}
+            \caption{Hourly Loss (MG2)}
+            \label{fig:LOSS_MG2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figure/LOSS/MG3.png}
+            \caption{Hourly Loss (MG3)}
+            \label{fig:LOSS_MG3}
+        \end{subfigure}
+        \caption{Hourly active power loss fluctuations for MG0--MG3 in Base and P2P Trade scenarios.}
+        \label{fig:LOSS_GRID}
+    \end{figure}
+    Building on the general observations of the system's losses, Figure \ref{fig:LOSS_GRID} depicts the hourly loss fluctuations for the four microgrids under study. By examining each grid (MG 0 through MG 3) individually, we can identify specific periods of high volatility and the factors driving these spatiotemporal trade-offs.
+
+    \begin{enumerate}
+        \item \textbf{Infrastructure Backbone (MG0)}
+        \begin{itemize}
+            \item \textbf{During peak renewable generation hours (08:00 to 15:00)}: the percentage of network losses in the P2P Trade Case drops below the isolated Base Case (Figure \ref{fig:LOSS_MG0}). In the Base scenario, MG0 imports power from the distant main grid substation (Figure \ref{fig:EMS_BASE}) to satisfy its local load, incurring standard transmission distances and voltage drops. However, in the Trade Case, the ADMM consensus mechanism allows the massive RE surplus from MG1 and MG3 to be injected directly into MG0's downstream nodes (Figure \ref{fig:EMS_TRADE}). According to the SOCP-relaxed DistFlow model, specifically the branch current limit inequality ($P_{n,t}^2 + Q_{n,t}^2 \le U_{m,t} \cdot \ell_{n,t}$), this local injection inherently provides robust Voltage Support ($U_{m,t}$). By supplying demand locally rather than drawing from the main feeder, the electrical transit distance is minimized, and the enhanced voltage profile significantly reduces the squared branch current ($\ell_{n,t}$). Consequently, MG0 physically benefits from the P2P market by experiencing a sharp decline in thermal losses. 
+            \item \textbf{During the evening peak and nighttime hours (16:00 to 07:00)}: the trend violently reverses, with the Trade Loss surging to over $3.0\%$ (Figure \ref{fig:LOSS_MG0}), nearly tripling the Base Loss. With no RE available, the heavy consumer (MG2) faces the prospect of dispatching highly expensive, carbon-intensive local Diesel Generators ($\mathcal{F}_{DG}$). The ADMM algorithm avoids this by pushing the dual price ($\lambda_{i,j,t}$) higher as shown in figure \ref{fig:price}, incentivizing MG0 to act as the primary Energy Highway. MG0 aggressively imports power from the main grid ($P^+_{grid}$) and wheels it across its infrastructure to fulfill the deficits of MG1, MG2, and MG3. This massive transit of cross-cluster power flow forces the branch active power ($P_{n,t}$) to spike, subsequently driving up the squared current magnitude ($\ell_{n,t}$) and dropping down the voltage which will mention in section \ref{sec:lv4:voltage_profile}. As the result, the system is generating substantial heat losses. 
+        \end{itemize}
+
+        \item  \textbf{The prosumer (MG1 and MG3)}  
+
+        This jump is a direct consequence of the long-distance power routing identified in section \ref{sec:lv2:spatiotemporal_dispatch}. In the Base Case, energy is consumed locally while in the Trade Case, power from MG1 and MG3 must traverse the distribution backbone (MG0) to reach neighboring, power-deficient grids MG2 (Figure \ref{fig:LOSS_MG1} and Figure \ref{fig:LOSS_MG3}). The physical consequence is a massive active power injection into the network, leading to a spike in Joule heating $\ell_{n,t} \cdot r_n$ losses. 
+        A secondary loss increment occurs during the evening peak load periods when RE generation diminishes. In the isolated state, MGs are compelled to supply peak demand by initiating local DG units or deep-discharging BESS. The decentralized trading model resolves this by facilitating significant power imports from the main grid or peer MGs ($P_{trade, n,t} \gg 0$). Consequently, the influx of imported power traveling through the distribution lines once again elevates the squared current magnitude $\ell_{n,t}$.
+
+        \item \textbf{Load centre (MG2)}
+
+        The rise in daytime losses (Figure \ref{fig:LOSS_MG2}) represents an unavoidable transmission cost required to absorb the low price electric from grid and surplus renewable energy. In contrast, the significant drop in nighttime losses serves as a testament to the power flow routing capabilities of the SOCP-ADMM algorithm. Rather than forcing the load through a single, monopolized source node which typically leads to line congestion and voltage drops—the system disperses the supply throughout the P2P network. By subdividing the power flow in alignment with the non-linear characteristics of the SOCP formulation, the system drastically mitigates overall power dissipation while maintaining voltage security during peak demand periods.
+    \end{enumerate}
+    
+    \subsubsection{Voltage Profile Analysis}
+    \label{sec:lv4:voltage_profile}
+        % 6. voltagebase.png
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG0}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/BASE/MG0.png} \vspace{4pt}
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/BASE/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/BASE/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/BASE/MG3.png}
+            \caption{Base Case}
+            \label{fig:voltage_base_case1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG0}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/TRade/MG0.png} \vspace{4pt}
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/TRade/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/TRade/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{Figure/voltage/TRade/MG3.png}
+            \caption{Trade Case}
+            \label{fig:voltage_trade_case1}
+        \end{subfigure}
+        \caption{Voltage profiles for MG0--MG3 in Base (left) and P2P Trade (right) scenarios.}
+        \label{fig:VOLTAGE_CASE1}
+    \end{figure}
+
+    The surveyed data from the voltage profiles demonstrates a significant expansion in voltage swings within the Trade scenario (Figure \ref{fig:voltage_trade_case1}) compared to the Base scenario (Figure \ref{fig:voltage_base_case1}). This physical behavior accurately reflects the fundamental laws of power flow. According to the relaxed DistFlow branch model, the voltage drop between nodes is directly proportional to the active and reactive power flows over the line impedance as represented by the equation \eqref{eq:voltage_drop}. 
+
+    To export massive volumes of surplus renewable energy ($P_{trade}$) back to the main grid, exporting microgrids (MG1 and MG3) are physically compelled to elevate their internal nodal voltages. Consequently, their voltage profiles approach the high value at nearly 1.04 pu (Figure \ref{fig:voltage_trade_case1}).
+    Conversely, the importing microgrid (MG2) deliberately reduces its local Diesel Generator to minimize fuel costs and by pulling remote power across the network, MG2 experiences larger voltage drops, displaying a clear downward voltage trend.
+    Meanwhile, MG0, acting as the primary energy transit corridor, experiences the widest voltage fluctuations due to bidirectional power flows throughout the day.
+    This is a direct consequence of MG0 having to carry a massive transit power flow to supply MG2. This large current not only causes a voltage drop but is also the direct cause of the thermal loss peak ($l_{n,t} \cdot r_n$), which increases three-fold compared to the base case, as previously noted in Figure \ref{fig:LOSS_MG0}.
+
+    Nevertheless, this aggressive physical behavior remains strictly within algorithmic control limits. A notable highlight of the simulation results is the validation of the stringency of the SOCP constraints. Despite the vigorous power exchanges and increased network losses, the voltage range at every node across all time steps is firmly locked within the stringent safety limits of 0.95 - 1.05 p.u.
+
+    Remarkably, this strict adherence is orchestrated by the dual variable update mechanism of the Consensus ADMM algorithm. Whenever nodal voltages risk violating these thresholds, the mathematical dual variables ($\lambda$) associated with the SOCP voltage constraints automatically generate shadow prices. These penalties structurally modify the Locational Marginal Prices (LMP) at the congested nodes.
+    \subsubsection{The Driving Mechanism: Locational Marginal Pricing of ADMM}
+    \label{sec:lv5:price_analysis}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Figure/price.png}
+        \caption{}
+        \label{fig:price}
+    \end{figure}
+    
+    To elucidate the underlying mechanism that orchestrates the strategic behaviors of the interconnected Microgrids (observed in \ref{sec:lv1:economic_performance} through \ref{sec:lv4:voltage_profile}). This section demonstrates how the decentralized ADMM algorithm utilizes price signals as the primary driver for optimal energy routing, congestion management, and loss allocation.
+
+    In the proposed decentralized framework, the P2P trading price is not pre-determined by a central market operator but is organically derived through the ADMM iterative process. The dual variable $\lambda_{i,j,t}$, updated in Step 6 of the ADMM algorithm \ref{ADMM_algorithm} (Eq. \eqref{eq:price_lambda}), acts as the LMP for the system.
+    Crucially, $\lambda_{i,j,t}$ transcends the pure cost of energy generation. It is mathematically formulated to encapsulate four distinct components:
+    \begin{itemize}
+        \item \textbf{Marginal Cost of Generation}: Derived from the quadratic fuel costs of DGs (Eq. \eqref{eq:fuel_cost}).
+        \item \textbf{Transmission Losses}: Driven by the squared current magnitude $\ell_{n,t}$ in the DistFlow model (Eq. \eqref{eq:socp_relaxation}).
+        \item \textbf{Congestion Penalty}: Triggered by the proximity of nodal voltages $U_{n,t}$ to their security bounds (Eq. \eqref{eq:voltage_drop}).
+        \item \textbf{Equipment Degradation}: Reflecting the BESS lifetime cost coefficient $\theta$ during charge/discharge cycles (Eq. \eqref{eq:bess_objective}).
+    \end{itemize}
+    The volatile behavior of the P2P prices illustrated in Figure \ref{fig:price}—frequently jumping outside the static grid limits ($P_{buy}$ and $P_{sell}$)—is a direct manifestation of these hidden physical and operational costs being internalized into the economic transactions. The system's behavior can be divided into two distinct operational phases:
+
+    \begin{enumerate}
+        \item \textbf{Nighttime and Low-RE Hours:}
+        2
+        During periods without renewable energy generation, the MGs act as net loads. To avoid dispatching expensive local diesel generators, the MGs rely heavily on imported power from the main grid (MG0). Consequently, the baseline trading price is anchored to the utility's time-of-use tariff ($P_{buy}$). However, the spatial topology (represented in figure \ref{fig:system_MG0123}) imposes a mathematical distance tax due to the power loss constraints. MG2, located at the furthest end of the distribution feeder, must compensate for the highest transmission losses, resulting in a significant price premium (the yellow line in figure \ref{fig:price}). Conversely, MG1 experiences prices closely tracking $P_{buy}$ due to its electrical proximity to the main grid.
+        \item \textbf{Daytime and High-RE Hours:}
+
+        During peak solar irradiance, the system experiences a massive RE oversupply, transforming MG1 and MG3 into major power sources. However, injecting excessive reverse power flow from MG1 into the network poses a severe risk of violating the upper voltage security limits—a strict physical constraint enforced by the SOCP model.
+
+        To prevent physical violations, the ADMM algorithm severely suppresses MG1's consensus price, driving it even below the utility selling price ($P_{sell}$). This extreme price drop acts as a vital economic penalty, forcing MG1 to either self-curtail (shown in figure \ref{fig:REcurtailment}) or utilize its BESS (shown in figure \ref{fig:EMS_TRADE}) to absorb the surplus. Importantly, the BESS charging during this period is a rational economic response to the plummeted price, effectively acting as an energy buffer that prevents the LMP from collapsing further.
+
+        Simultaneously, MG2 experiences a sharp price drop, realigning with the lower grid prices. This relief is driven by two factors described by figure \ref{fig:EMS_TRADE}. Firstly, MG2's internal PV generation satisfies a significant portion of its local load, drastically reducing its imported current and the associated quadratic line loss penalty. Secondly, the power MG2 does import is no longer expensive grid electricity, but rather the near-zero marginal cost surplus PV routed from MG1 and MG3.
+    \end{enumerate}
+
+    \subsection{Case 2: Four interconnected MGs system}
+    
+    Advancing beyond the structure of the first case, the second scenario examines a more complex decentralized network featuring four MGs (MG1, MG2, MG3, and MG4). The focus of this scenario is to evaluate the changes in the physical connection structure designed specifically for an internal trading market. During independent operation prior to trading, the microgrids maintain a direct grid-connected state with the main grid to independently ensure their own energy security, acting as discrete entities with absolutely no cross-linkages or power exchange among themselves. Upon transitioning to cooperative operation, the MGs establish direct physical connections with one another, restructuring the system into a multilateral, closed-loop internal trading network. Comparing the system states before and after this reconnection will affirm the comprehensive coordination capability of the decentralized ADMM algorithm. Specifically, the algorithm not only effectively manages overlapping power exchange flows among the microgrids to minimize the total operating costs for the entire coalition, but it also automatically reroutes power flows to resolve local congestion issues in a fully decentralized manner.
+
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figure/Case_2.png}
+        \caption{Layout of the four interconnected MGs system}
+        \label{fig:system_MG1234}
+    \end{figure}
+
+    \subsubsection{Economic Performance and Algorithmic Convergence}
+    \begin{table}[htbp]
+        \centering
+        \caption{Comparison of operation costs for different models in Case 2 (in cents)}
+        \label{tab:mg-cost-comparison-case2}
+        \renewcommand{\arraystretch}{1.4} 
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{MG} & \textbf{\begin{tabular}[c]{@{}c@{}}Base Cost\\ (cents)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Trade Cost\\ (cents)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Saving\\ (cents)\end{tabular}} & \textbf{\% Change} \\ \hline
+        1 & 37,577.52 & 37,396.93 & 180.59 & 0.48\% \\ \hline
+        2 & 78,842.31 & 66,107.76 & 12,734.55 & 16.15\% \\ \hline
+        3 & 1,445.62 & 280.19 & 1,165.43 & 80.62\% \\ \hline
+        4 & 77,797.55 & 69,813.85 & 7,983.70 & 10.26\% \\ \hline
+        \textbf{TOTAL} & \textbf{195,663.00} & \textbf{173,598.73} & \textbf{22,064.26} & \textbf{11.28\%} \\ \hline
+        \end{tabular}
+    \end{table}
+
+    The economic viability and computational robustness of the proposed framework in the four-MG interconnected system are analyzed through the daily operational costs presented in Table \ref{tab:mg-cost-comparison-case2}. The simulation results demonstrate that the decentralized ADMM-based P2P trading mechanism successfully achieves a optimal convergence state. The total system operational cost ($F_{total}$) is reduced from $195,663.00 \text{ cents}$ to $173,598.73 \text{ cents}$, yielding a collective system-wide saving of $22,064.26 \text{ cents}$ (an 11.28\% reduction).
+
+    Crucially, the results confirm that every individual microgrid achieves a positive economic surplus (Saving $> 0$ for all $m \in M$), thereby satisfying the Individual Rationality condition. This is a fundamental requirement for maintaining a sustainable P2P trading coalition. MG3 experiences the most significant relative economic benefit with a saving of 80.62\%, while MG2 absorbs the highest absolute saving of 12,734.55 cents. 
+
+    Comparing these results with the outcomes of Case 1 (see Table \ref{tab:mg-cost-comparison}), although the relative saving in Case 2 (11.28\%) is numerically lower than the 24.51\% reduction achieved in Case 1, this difference is primarily attributed to the shift in the operational baseline. In Case 1, the base model represents a strictly isolated system with significant inherent inefficiencies, whereas Case 2 utilizes a baseline where microgrids are already grid-connected for energy security. Consequently, the coalition in Case 2 starts from a more optimized operational state, leaving a narrower margin for further reduction while still confirming the robust economic incentives of the direct P2P interconnection architecture.
+
+    \subsubsection{Spatiotemporal Power Dispatch and Renewable Energy Integration}
+    \label{sec:lv2_case2:spatiotemporal_dispatch}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1\textwidth]{figure_case2/REcurtail.png}
+        \caption{}
+        \label{fig:REcurtail_case2}
+    \end{figure}
+
+    The analysis of renewable energy (RE) integration in the interconnected four-MG system reveals a significant improvement in resource utilization compared to the isolated operational mode. Data from Figure \ref{fig:REcurtail_case2} indicates that in the Base Case, the system experiences severe RE curtailment during peak solar irradiance (hours 8 to 15), peaking at approximately 2.5 MW. This waste is primarily localized within MG1 and MG3 due to the saturation of internal demand and the limited hosting capacity of local battery energy storage systems. 
+
+    Upon the activation of the P2P trading mechanism, the ADMM algorithm allows zero-marginal-cost energy from MG1 and MG3 to be exported to deficit microgrids, particularly MG2, effectively reducing the system-wide curtailment to near zero. While the peak curtailment in Case 2 (2.5 MW) is lower than the 3.7 MW observed in the Case 1 structure (Section \ref{sec:lv2:spatiotemporal_dispatch}), the underlying optimization mechanism remains consistent: the decentralized controller identifies that cross-border RE exchange is more economically efficient than either curtailing assets or utilizing expensive local generation.
+
+    The internal dispatch behavior, captured in Figure \ref{fig:EMS_base_case2} and Figure \ref{fig:EMS_trade_case2}, reveals the causal relationship between trading and cost avoidance. By establishing direct physical connections in Case 2, the MGs can bypass the main grid's intermediary role seen in Case 1, allowing for more flexible energy routing. The exported RE from MG1 and MG3 directly replaces the high-cost fuel dispatch ($F_{DG}$) of MG2's diesel generators, pushing their output toward the minimum stable limit. 
+    
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMSbase/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMSbase/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMSbase/MG3.png} \vspace{4pt}
+            {\small \textbf{MG4}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMSbase/MG4.png}
+            \caption{Base Case}
+            \label{fig:EMS_base_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMStrade/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMStrade/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMStrade/MG3.png} \vspace{4pt}
+            {\small \textbf{MG4}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/EMStrade/MG4.png}
+            \caption{Trade Case}
+            \label{fig:EMS_trade_case2}
+        \end{subfigure}
+        \caption{Internal dispatch behavior of MG1--MG4 in Case 2: Base (left) and P2P Trade (right) scenarios.}
+    \end{figure}
+
+    \begin{itemize}
+        \item \textbf{MG1}: In the Base Case, MG1 suffers from severe renewable energy (RE) curtailment due to the simultaneous saturation of its internal load and battery capacity. In the P2P scenario, MG1 transitions into the coalition's primary source, exporting surplus solar and wind power to MG3 and MG4. Interestingly, during low RE hours, MG1 intelligently imports P2P energy from MG4 rather than discharging its local BESS, as the algorithm identifies that the P2P tariff is lower than the battery degradation cost ($\theta_n$).
+        \item \textbf{MG3}: Occupying a central topological position, MG3 acts as a conduit for the coalition. During peak irradiance, it facilitates the routing of cheap energy from MG1 to the load-heavy MG2. This coordinated flow ensures that MG3's battery state-of-charge remains stable, preserving it for high-value services. During night hours, MG3 engages in price arbitrage by importing from the main grid to support the deficit in MG2 and MG4.
+        \item \textbf{MG2}: As a load-heavy node, MG2 substitutes expensive grid TOU purchases with P2P imports. Notably, MG2 performs a proxy export function: it leverages its unused grid-connection quota to export cheap P2P energy received from MG3/MG4 to the main grid, acting as a secondary export window for the coalition's surplus.
+        \item \textbf{MG4}: MG4 serves as an auxiliary transmission path, sharing the power flow burden to prevent thermal limit violations on the primary MG1-MG3 lines. It also acts as a dynamic buffer, utilizing its BESS—charged with cheap day-time RE—to sell energy back to MG1 and MG2 during peak-price evening hours.
+    \end{itemize}
+
+    \subsubsection{Spatial Network Losses vs Temporal Storage Optimization}
+
+    \begin{table}[htbp]
+        \centering
+        \caption{Analysis of Losses and Percentage Ratio on Load for Case 2}
+        \label{tab:loss_analysis_case2}
+        \setlength{\tabcolsep}{2pt} 
+        \footnotesize 
+        \newcolumntype{C}{>{\centering\arraybackslash}X}
+        \begin{tabularx}{\textwidth}{l C C C C C C}
+            \toprule
+            & \multicolumn{2}{c}{\textbf{Loss (MWh)}} & \textbf{Load} & \multicolumn{2}{c}{\textbf{\% Loss/Load}} & \textbf{Dif} \\
+            \cmidrule(lr){2-3} \cmidrule(lr){5-6}
+            \textbf{MG} & \textbf{Base} & \textbf{Trade} & \textbf{(MWh)} & \textbf{Base} & \textbf{Trade} &  \\
+            \midrule
+            1 & 0.47 & 0.51 & 62.66 & 0.753\% & 0.819\% & -0.07\% \\
+            2 & 0.61 & 0.48 & 58.47 & 1.046\% & 0.825\% & 0.22\% \\
+            3 & 0.10 & 0.30 & 24.58 & 0.414\% & 1.201\% & -0.79\% \\
+            4 & 0.51 & 0.38 & 54.33 & 0.942\% & 0.701\% & 0.24\% \\
+            \midrule
+            \textbf{SUM} & \textbf{1.70} & \textbf{1.67} & \textbf{200.04} & \textbf{0.849\%} & \textbf{0.836\%} & \textbf{0.01\%} \\
+            \bottomrule
+        \end{tabularx}
+        \label{tab:LOSS_table_case2}
+    \end{table}
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/LOSS/MG1.png}
+            \caption{Hourly Loss (MG1)}
+            \label{fig:LOSS_MG1_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/LOSS/MG2.png}
+            \caption{Hourly Loss (MG2)}
+            \label{fig:LOSS_MG2_case2}
+        \end{subfigure}
+        
+        \vspace{10pt}
+        
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/LOSS/MG3.png}
+            \caption{Hourly Loss (MG3)}
+            \label{fig:LOSS_MG3_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/LOSS/MG4.png}
+            \caption{Hourly Loss (MG4)}
+            \label{fig:LOSS_MG4_case2}
+        \end{subfigure}
+        \caption{Hourly active power loss fluctuations for MG1--MG4 in Case 2 Base and P2P Trade scenarios.}
+        \label{fig:LOSS_GRID_case2}
+    \end{figure}
+
+    Network loss analysis reveals the contrasting impact of topology on system efficiency. In Case 1 (Table \ref{tab:loss_analysis}), the P2P market increased total losses by 0.35\% (from 1.46 to 2.16 MWh) because cross-MG transactions were forced through the main grid backbone, extending the transmission distance. Conversely, the interconnected four-MG system in Case 2 (Table \ref{tab:LOSS_table_case2}) utilizes a mesh-like architecture that provides shorter, parallel transit routes, allowing power flows to bypass high-impedance main grid feeders. This strategic redistribution of thermal and current stress across the distribution network (Figure \ref{fig:LOSS_GRID_case2}) creates a counter-intuitive physical phenomenon: despite continuous cross-cluster power exchanges, total system-wide energy loss decreases by 0.01\%, from 1.70 MWh (Base Case) to 1.67 MWh (Trade scenario).
+
+    \begin{itemize}
+        \item \textbf{MG1:} During peak RE generation (08:00--16:00), Trade loss strictly exceeds Base loss (Figure \ref{fig:LOSS_MG1_case2}). Curtailed photovoltaic generation from the Base scenario is exported at high capacity to MG3 and MG4, proportionally increasing thermal losses. At Off-peak (17:00--07:00), Trade and Base losses equalize as MG1 halts exports and imports localized power from MG4, bypassing distant Main Grid transmissions.
+        
+        \item \textbf{MG3:} Trade loss exponentially exceeds Base loss across all timeframes (Figure \ref{fig:LOSS_MG3_case2}). During peak RE hours, MG3 operates as a transit conduit routing active power from MG1 to MG2. During off-peak hours, MG3 executes arbitrage by routing Main Grid imports to MG2 and MG4. Sustained transit power flow renders MG3 the most physically burdened subsystem.
+        
+        \item \textbf{MG2 and MG4:} During peak RE, Trade losses exceed Base losses due to localized influxes of cheap power from MG3 and proxy export injections directed at the Main Grid (Figures \ref{fig:LOSS_MG2_case2} and \ref{fig:LOSS_MG4_case2}). Conversely, during nocturnal peak load (17:00--23:00), Trade losses are drastically lower than Base losses. In the Base scenario, surging loads demand high squared current magnitudes from a single Point of Common Coupling, inducing severe voltage drops and quadratic loss spikes. The Trade scenario fragments this bulk current through multi-directional supply configurations (Main Grid, MG4 BESS discharge, and MG3 transfers). Splitting the aggregate current $I$ into fractional parallel flows exponentially attenuates total $I^2R$ losses, structurally eliminating physical congestion at the PCC.
+    \end{itemize}
+
+    The SOCP-ADMM formulation explicitly captures the non-linear physical constraints of $P_{loss} = I^2R$. By purposefully loading MG3's transit capacity during daylight hours, the algorithm successfully dismantles the current overload conditions at MG2 and MG4 during nocturnal load peaks. This yields an operational state that is both economically optimal and thermodynamically stable.
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/BESS/BASE_BESS.png}
+            \caption{SOC Profile (Base)}
+            \label{fig:SOC_BASE_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/BESS/Trade_BESS.png}
+            \caption{SOC Profile (Trade)}
+            \label{fig:SOC_TRADE_case2}
+        \end{subfigure}
+        
+        \vspace{10pt}
+        
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/BESS/BASE_degration.png}
+            \caption{Degradation Cost (Base)}
+            \label{fig:DEG_BASE_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figure_case2/BESS/Trade_degration.png}
+            \caption{Degradation Cost (Trade)}
+            \label{fig:DEG_TRADE_case2}
+        \end{subfigure}
+        \caption{BESS Operational Analysis in Case 2: Comparing State of Charge (SOC) profiles and degradation costs between Base and P2P Trade scenarios.}
+        \label{fig:BESS_ANALYSIS_case2}
+    \end{figure}
+
+    The State of Charge (SOC) profiles for Case 2, as shown in Figure \ref{fig:SOC_BASE_case2} and Figure \ref{fig:SOC_TRADE_case2}, demonstrate a fundamental transition from Local Isolation to Network-wide Synchronization. In the Base Case (Figure \ref{fig:SOC_BASE_case2}), the storage burden is highly polarized; MG1 and MG3 exhibit significant SOC fluctuations while attempting to absorb local RE generation, whereas MG2 and MG4 remain dormant at an SOC of 0.4 as grid-charging costs exceed the marginal benefit. In the Trade Case (Figure \ref{fig:SOC_TRADE_case2}), the P2P mechanism "activates" all BESS units, with all SOC curves converging toward the maximum limit (0.95) during peak RE hours (08:00--14:00). MG2 and MG4 effectively absorb surplus power from MG1.
+
+    Furthermore, the SOCP-ADMM algorithm facilitates a strategic trade-off regarding BESS degradation (Figure \ref{fig:DEG_TRADE_case2}). For MG1 and MG3, degradation is minimized by consolidating charging actions into continuous blocks, thereby eliminating the fragmented, high-frequency cycles observed in the isolated scenario (Figure \ref{fig:DEG_BASE_case2}). Conversely, the increased degradation costs for MG2 and MG4 in the Trade Case reflect a rational economic exploitation of their storage capacity: incurring battery degradation is significantly more cost-effective than purchasing peak-hour energy from the Main Grid under standard Time-of-Use (TOU) tariffs.
+
+    Comparing the BESS behavior across both cases reveals an evolution in the role of energy storage within the P2P framework. In Case 1 (Figure \ref{fig:BESS_ANALYSIS}), the primary benefit of the P2P market was the flattening of SOC profiles, where the coordination mechanism effectively eliminated wasteful, deep-cycling actions that were previously necessary for local balance. In contrast, Case 2 (Figure \ref{fig:BESS_ANALYSIS_case2}) demonstrates a more proactive and synchronized utilization of the storage network. Instead of merely reducing usage to save on degradation (as seen in Case 1's MG3), the Case 2 scenario activates previously dormant assets (MG2 and MG4) to serve as dynamic network buffers. While Case 1 emphasized the technical efficiency of removing round-trip losses, Case 2 highlights the economic maturity of the system, where battery degradation is intentionally accepted as a flexible operational cost to maximize the absorption of zero-marginal-cost renewable energy and hedge against high utility prices.
+
+    \subsubsection{Voltage Profile Analysis}
+    \label{sec:lv4_case2:voltage_profile}
+    \begin{figure}[htbp]
+        \centering
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/BASE/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/BASE/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/BASE/MG3.png} \vspace{4pt}
+            {\small \textbf{MG4}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/BASE/MG4.png}
+            \caption{Base Case}
+            \label{fig:voltage_base_case2}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
+            \centering
+            {\small \textbf{MG1}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/TRade/MG1.png} \vspace{4pt}
+            {\small \textbf{MG2}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/TRade/MG2.png} \vspace{4pt}
+            {\small \textbf{MG3}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/TRade/MG3.png} \vspace{4pt}
+            {\small \textbf{MG4}} \par\vspace{2pt}
+            \includegraphics[width=\textwidth]{figure_case2/voltage/TRade/MG4.png}
+            \caption{Trade Case}
+            \label{fig:voltage_trade_case2}
+        \end{subfigure}
+        \caption{Voltage profiles for MG1--MG4 in Case 2: Base (left) and P2P Trade (right) scenarios.}
+        \label{fig:VOLTAGE_CASE2}
+    \end{figure}
+
+    In the peer-to-peer (P2P) trading framework, voltage security is a critical metric for evaluating the technical feasibility of the economic dispatch. The simulation results, illustrated in Figure \ref{fig:VOLTAGE_CASE2}, demonstrate that the SOCP-ADMM algorithm maintains system stability across all operational periods. Despite the complex, bidirectional power flows, the voltage magnitude at every node within the four-MG network is strictly maintained within the stringent safety limits of 0.95 - 1.05 p.u. The SOCP relaxation ensures that the physical cross-border exchanges never push the system into a state of voltage instability.
+
+    The transition from the Base Case to the Trade Case introduces distinct local voltage variations:
+    \begin{itemize}
+        \item \textbf{Source Node (MG1)}: MG1 exhibits an expanded voltage swing. As the primary energy exporter during the day and an importer at night, this dynamic operational shift optimizes resource utilization but forces its nodal voltages to adapt to massive power injections.
+        \item \textbf{Transit Node (MG3)}: Despite experiencing the highest transmission losses as the central routing hub, MG3 maintains the flattest and most stable voltage profile. This stability underscores its role as the electrical backbone of the interconnected coalition.
+        \item \textbf{Load and Proxy Export Nodes (MG2 \& MG4)}: These microgrids experience noticeable voltage drops, particularly at the end-of-feeder nodes (e.g., nodes 33-35 in MG4) during peak P2P import hours. This is an unavoidable physical consequence of drawing power across long distances from MG1. However, the dual-variable penalty mechanism of the ADMM algorithm ensures that this voltage sag is safely bounded above 0.98 p.u. (Figure \ref{fig:voltage_trade_case2}).
+    \end{itemize}
+
+    Ultimately, the decentralized P2P framework not only achieves economic efficiency but also enhances local voltage regulation. By dispersing the energy supply through direct SOP interconnections rather than relying on a single, centralized main grid substation, the system effectively mitigates concentrated current stresses, thereby flattening potential voltage drops during evening peak loads.
+
+    The voltage stability observed in Case 2 (Figure \ref{fig:VOLTAGE_CASE2}) demonstrates a significant technical advancement over the Case 1 results (Figure \ref{fig:VOLTAGE_CASE1}). In the first scenario, the reliance on a single Point of Common Coupling (PCC) at MG0 forced all trading power through a central bottleneck, leading to concentrated voltage drops and larger swings at the peripheral microgrids. In Case 2, however, the establishment of direct interconnections allows the system to disperse current injections across multiple entry points. This multi-directional supply configuration effectively flattens the voltage profiles of the load centers (MG2 and MG4) and prevents the localized voltage spikes that were previously necessary for long-distance exports in Case 1.
+
+    \subsubsection{The Driving Mechanism: Locational Marginal Pricing of ADMM}
+    \label{sec:lv5_case2:price_analysis}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1\textwidth]{figure_case2/PRICE.png}
+        \caption{}
+        \label{fig:PRICE_case2}
+    \end{figure}
+
+    The trading price signal $\lambda$ (the dual variable in the ADMM algorithm) acts as the "invisible hand" that coordinates the operational behavior of the four-MG interconnected system. The analysis of the price profiles in Figure \ref{fig:PRICE_case2} provides deep insights into the economic efficiency and dispatch logic of the proposed P2P framework.
+
+    \begin{enumerate}
+        \item \textbf{Price Corridor and Individual Rationality}: During standard operational periods, all P2P transaction prices ($\lambda$) are maintained within the grid price corridor, bounded above by the utility purchase price ($\pi_{buy,t}$) and below by the feed-in tariff ($\pi_{sell,t}$). This confirms the \textit{Individual Rationality} of the model: deficit microgrids always purchase energy at or below the utility rate, while surplus microgrids sell at or above the export rate. This economic surplus is shared equitably among coalition members through the decentralized dual updates.
+        
+        \item \textbf{Marginal Price Collapse and RE Integration}: A prominent feature of the price trajectory is the collapse of the P2P price towards zero between 08:00 and 14:00. This is a strong market signal reflecting the massive renewable energy (RE) oversupply at MG1. When production exceeds the hosting capacity of internal loads and BESS units (leading to potential curtailment), the marginal cost of an additional unit of energy effectively becomes zero. This zero-price signal acts as a dispatch command, incentivizing MG2 and MG4 to maximize their absorption of surplus energy for local demand or storage, thereby autonomously eliminating RE waste without centralized intervention.
+    \end{enumerate}
+
+    The price dynamics in Case 2 (Figure \ref{fig:PRICE_case2}) exhibit a more stable and resilient behavior compared to the price volatility observed in Case 1 (Figure \ref{fig:price}). In the grid-centric Case 1 structure, the physical congestion at the central MG0 infrastructure frequently forced the ADMM algorithm to generate aggressive shadow prices, causing the LMPs to jump violently beyond the utility's TOU limits to enforce physical feasibility. In the mesh-connected Case 2 network, the availability of alternative routing paths provides the decentralized controller with greater flexibility. Consequently, the transaction prices are more consistently bounded within the grid's purchase/sell corridor, and the price signals are primarily driven by marginal generation costs and local RE availability rather than infrastructure congestion penalties.
+
+
+\newpage
+\bibliographystyle{elsarticle-num} 
+\bibliography{cas-refs}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+% \begin{thebibliography}{00}
+
+% %% \bibitem{label}
+% %% Text of bibliographic item
+
+% \bibitem{}
+
+% \end{thebibliography}
+
+
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
