@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  22 JUL 2026 00:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  23 JUL 2026 11:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -361,17 +361,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 37.
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
-
- []
-
-
 
 [1
 
-{d:/Ungdung/Latex/installed/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-
-[2] (./LOR2_Thanh.aux)
+{d:/Ungdung/Latex/installed/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./LOR2_Thanh.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -380,18 +373,18 @@ Package rerunfilecheck Info: File `LOR2_Thanh.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12344 strings out of 474006
- 197181 string characters out of 5729242
+ 12340 strings out of 474006
+ 197148 string characters out of 5729242
  644282 words of memory out of 5000000
  35328 multiletter control sequences out of 15000+600000
- 575822 words of font info for 97 fonts, out of 8000000 for 9000
+ 575697 words of font info for 95 fonts, out of 8000000 for 9000
  622 hyphenation exceptions out of 8191
- 75i,5n,79p,1046b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,1046b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on LOR2_Thanh.pdf (2 pages, 32081 bytes).
+Output written on LOR2_Thanh.pdf (1 page, 31946 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 29 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
  24577 words of extra memory for PDF output out of 24883 (max. 10000000)
 
