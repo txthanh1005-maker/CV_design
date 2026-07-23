@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  23 JUL 2026 12:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.8)  23 JUL 2026 14:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -347,6 +347,13 @@ Package microtype Info: No adjustment of character kerning.
  (d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 61.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 61.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 61.
+
 
 [1
 
@@ -361,18 +368,18 @@ Package rerunfilecheck Info: File `SOP_Academic.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12201 strings out of 474006
- 194918 string characters out of 5729242
+ 12275 strings out of 474006
+ 196061 string characters out of 5729242
  649511 words of memory out of 5000000
- 35229 multiletter control sequences out of 15000+600000
- 563910 words of font info for 67 fonts, out of 8000000 for 9000
+ 35268 multiletter control sequences out of 15000+600000
+ 568068 words of font info for 90 fonts, out of 8000000 for 9000
  622 hyphenation exceptions out of 8191
  75i,5n,79p,1047b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on SOP_Academic.pdf (2 pages, 63625 bytes).
+<d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><d:/Ungdung/Latex/installed/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on SOP_Academic.pdf (2 pages, 102621 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
- 8193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16385 words of extra memory for PDF output out of 17280 (max. 10000000)
 
