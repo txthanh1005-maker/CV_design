@@ -8,5 +8,6 @@
 !/LOR3_latex/
 !/SOP_latex/
 !/Latex CV/
+!/PS_latex/
 # Un-ignore .gitignore file itself
 !.gitignore

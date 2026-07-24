@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+
+\setstretch{1.15}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{STATEMENT OF PURPOSE} \\
+    \vspace{0.5em}
+    \normalsize Applicant: Trinh Xuan Thanh
+\end{center}
+\vspace{1em}
+
+My foundation in Electrical Engineering is rooted in physical grid operations, but the challenges of future power grids demand computational solutions over hardware expansion. I view the power grid as a large-scale mathematical graph, where vertices (load nodes) and edges (transmission lines) are defined by impedance matrices. Energy flows are bounded by nonlinear systems of equations, framing the national power system as a massive optimization problem. Computational logic is the core of modern grid control. Software models and codebases simulate and exploit the operational limits of existing physical equipment. My research objective is to leverage programming and computer science to solve system control problems, directly addressing the technical requirements of high renewable energy integration.
+
+During my research at the PGRE Laboratory under Assoc. Prof. Nguyen Duc Tuyen, I coded simulations for the Unit Commitment problem. I advanced the model from Linear Programming (LP) to Mixed-Integer Linear Programming (MILP), utilizing discrete variables to manage conventional generator states and Battery Energy Storage Systems (BESS) cycles. Practical grid operation mandates maintaining strict voltage and reactive power constraints, which requires solving the AC power flow. However, the AC Optimal Power Flow (AC OPF) problem is inherently non-convex and NP-hard. To resolve this, I applied Second-Order Cone Programming (SOCP) convex relaxation to guarantee fast algorithmic convergence while rigorously upholding the voltage and reactive power constraints.
+
+System resilience against faults demands an instantaneous response. As the grid expands, the combinatorial explosion of the variable space induces a computational bottleneck, causing centralized solvers to hit execution limits and fail real-time requirements. To address this, my thesis research, published as a first author at ICGEA, constructed a distributed optimization framework. I decomposed the IEEE 123-bus system into 4 autonomous Microgrids capable of peer-to-peer trading. This architecture integrates the Alternating Direction Method of Multipliers (ADMM) with Model Predictive Control (MPC), deploying a 5-hour prediction horizon (H=5) to compute immediate control actions post-fault. During parallel processing implementation, I encountered the intrinsic divergence of ADMM. By developing an adaptive penalty tuning mechanism, I enforced strict convergence, drastically compressing the required iterations from 150 down to 25-30 and accelerating the computational speed.
+
+Beyond technical simulations, I recognize the objective limitations of energy systems in transition. The power grid in Vietnam operates under a centralized, top-down dispatch architecture. With physical infrastructure lagging behind rapid renewable energy penetration, operators unconditionally prioritize security over optimization. This constraint forces the reliance on massive power curtailment as a primary operational measure. Furthermore, concepts like Demand Response or Microgrids face implementation barriers due to the lack of algorithm-compatible frameworks for empirical validation. To engineer core technologies for the Smart Grid, I must access advanced academic research environments equipped with digitized retail models and empirical laboratory facilities.
+
+The transition towards decentralized electricity markets is a definitive trajectory in renewable energy integration. The United States provides an optimal environment for this research. Despite facing similar infrastructural hurdles like large-scale curtailment, the U.S. grid operates mature electricity markets managed by Independent System Operators (ISO/RTO). This transparent market structure, underpinned by Locational Marginal Pricing (LMP) mechanisms, is the necessary framework to validate autonomous dispatch algorithms. Cognizant of the horizon limitations of MPC, my short-term objective in a graduate program is to construct a hybrid control architecture integrating MPC with Machine Learning and Reinforcement Learning (ML/RL). By migrating the computational workload to an offline training phase for value function approximation, I will bypass these limits while retaining MPC as a safety filter to enforce physical grid constraints. This research targets a comprehensive decision-making mechanism for energy trading and economic dispatch within Distributed Energy Resource Management Systems (DERMS) under the LMP market. Long-term, I intend to repatriate core technologies and market design principles to Vietnam, transforming the grid from passively curtailing renewables to proactively executing algorithms to dictate stability and optimize economic utility.
+
+The [Program Name] at [University Name] aligns directly with my technical objectives. The research conducted by Professor [Professor Name] on [Research Field] matches my academic focus. Joining the [Lab/Research Center Name] provides the necessary infrastructure to empirically test distributed control algorithms on physical prototypes. With a concrete foundation in mathematical optimization and programming, I am prepared to execute complex technical tasks within the department's projects and deliver functional engineering solutions.
+
+\end{document}
